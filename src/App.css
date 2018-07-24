@@ -32,6 +32,10 @@
   height: 500px;
 }
 
+.tenantImage img {
+  height: 500px;
+}
+
 .swipeButtons {
     padding: 15px 32px;
     text-align: center;
@@ -66,5 +70,24 @@ ul {
 
 .FirstPageImage {
 
+}
+
+.homeOwnerImage, .tenantImage {
+  display: flex;
+}
+
+.homeOwnerImage:hover {
+  opacity: 0.3;
+  
+}
+
+.tenantImage:hover {
+  opacity: 0.3;
+}
+
+.Arrow-icons {
+  max-height: 50px;
+  width: 50px;
+  margin: auto;
 }
 

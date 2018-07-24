@@ -12,10 +12,13 @@ class MainPageOwner extends React.PureComponent {
           <button>Chat</button>
           </div>
           <h1>{homeOwners[1].Location}</h1>
-
+          
           <div className="homeOwnerImage" data-swipable="true" >
-             <img  src={homeOwners[1].url} draggable></img>
+             <img className="Arrow-icons" src={require('../images/Button-Back.png')} />
+             <img src={homeOwners[1].url} alt="House" draggable></img>
+             <img className="Arrow-icons" src={require('../images/Button-Next.png')} />
           </div>
+          
           <div className="homeInformation">
             <ul>
                 <li>Size: {homeOwners[1].size} m2</li>
