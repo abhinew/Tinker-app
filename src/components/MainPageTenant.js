@@ -7,7 +7,7 @@ class MainPageTenant extends React.PureComponent {
       return ( <div>
           <h1></h1>
           <div className="image">
-              <img/>
+              test
           </div>
           </div> 
           )
