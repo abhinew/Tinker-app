@@ -9,6 +9,8 @@ import store from './store';
 import FirstPageComponent from './components/FirstPageComponent';
 import MainPageTenant from './components/MainPageTenant';
 import MainPageOwner from './components/MainPageOwner'
+import ProfilePageOwnerComponent from './components/ProfilePageOwnerComponent'
+import ProfilePageTenantComponent from './components/ProfilePageTenantComponent'
 
 
 
@@ -21,6 +23,8 @@ class App extends Component {
           <Route exact path ='/' component = {FirstPageComponent} />
           <Route exact path ='/main/tenant' component = {MainPageOwner} />
           <Route exact path ='/main/owner' component = {MainPageTenant} />
+          <Route exact path ='/profile/owner' component = {ProfilePageOwnerComponent} />
+          <Route exact path ='/profile/tenant' component = {ProfilePageTenantComponent} />
         </div>
          </BrowserRouter>
       </Provider>

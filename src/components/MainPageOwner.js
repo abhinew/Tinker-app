@@ -8,7 +8,7 @@ class MainPageOwner extends React.PureComponent {
     render(){
       return ( <div>
                   <div className="topButtons">
-                    <Link to = '/profile'><button>Profile</button></Link>
+                    <Link to = '/profile/tenant'><button>Profile</button></Link>
                     <Link to = '/'><button>Home</button></Link>
                     <Link to = '/chat'><button>Chat</button></Link>
                   </div>
