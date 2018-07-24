@@ -21,6 +21,7 @@ class App extends Component {
 
         <main>
           <Route exact path="/" component={FirstPage} />
+          <Route exact path="/main/tenant" component={MainPageOwner} />
           </main>
         </div>
          </BrowserRouter>
