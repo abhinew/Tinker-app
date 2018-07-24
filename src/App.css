@@ -26,3 +26,45 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+
+.homeOwnerImage img {
+  height: 500px;
+}
+
+.swipeButtons {
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.swipeButtons #like {
+  background-color: #4caf50;
+  color: white;
+  border: 1px solid black;
+  margin-left: 50px;
+}
+
+.swipeButtons #dislike {
+  background-color: #b71c1c;
+  color: white;
+  border: 1px solid black;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.FirstPageButton {
+  background-color: green;
+  margin: 20px;
+}
+
+.FirstPageImage {
+
+}
+
