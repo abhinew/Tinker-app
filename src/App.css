@@ -68,7 +68,21 @@ ul {
   margin: 20px;
 }
 
-.FirstPageImage {
-
+.menu {
+  height: 55px;
+  width: 100%;
+  background-color: #303f9f;
+  margin: auto;
 }
 
+.topButtons a{
+  width: 150px;
+  height: 30px;
+  float: left;
+  padding: 15px;
+  margin-right:2px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 17pt;
+  text-align: center;
+}

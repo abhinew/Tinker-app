@@ -7,10 +7,12 @@ import { Link } from 'react-router-dom'
 class MainPageOwner extends React.PureComponent {
     render(){
       return ( <div>
+                  <div className="menu">
                   <div className="topButtons">
-                    <Link to = '/profile/tenant'><button>Profile</button></Link>
-                    <Link to = '/'><button>Home</button></Link>
-                    <Link to = '/chat'><button>Chat</button></Link>
+                    <Link to = '/profile/tenant'>Profile</Link>
+                    <Link to = '/'>Home</Link>
+                    <Link to = '/chat'>Chat</Link>
+                  </div>
                   </div>
                     <h1>{homeOwners[1].Location}</h1>
 
