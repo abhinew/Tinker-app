@@ -32,6 +32,10 @@
   height: 500px;
 }
 
+.tenantImage img {
+  height: 500px;
+}
+
 .swipeButtons {
     padding: 15px 32px;
     text-align: center;
