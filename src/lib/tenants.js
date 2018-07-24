@@ -1,6 +1,6 @@
 export  const tenants = [
     {   
-        id: 1,
+        id: 0,
         name: "Sjoerd",
         age: 26,
         occupation: "Webdeveloper",
@@ -9,7 +9,7 @@ export  const tenants = [
         url:"https://images.pexels.com/photos/462680/pexels-photo-462680.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"     
     },
     {   
-        id: 2,
+        id: 1,
         name: "Abi",
         age: 29,
         occupation: "Webdeveloper",
@@ -18,7 +18,7 @@ export  const tenants = [
         url:"https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"    
     },
     {   
-        id: 3,
+        id: 2,
         name: "Mohammad",
         age: 30,
         occupation: "Webdeveloper",
@@ -27,7 +27,7 @@ export  const tenants = [
         url:"https://images.pexels.com/photos/450271/pexels-photo-450271.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"    
     },
     {   
-        id: 4,
+        id: 3,
         name: "John",
         age: 40,
         occupation: "Webdeveloper",
@@ -36,7 +36,7 @@ export  const tenants = [
         url:"https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"    
     },
     {   
-        id: 5,
+        id: 4,
         name: "Lisa",
         age: 50,
         occupation: "Webdeveloper",
