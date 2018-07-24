@@ -27,6 +27,7 @@
   to { transform: rotate(360deg); }
 }
 
+
 .homeOwnerImage img {
   height: 500px;
 }
@@ -57,3 +58,13 @@
 ul {
   list-style-type: none;
 }
+
+.FirstPageButton {
+  background-color: green;
+  margin: 20px;
+}
+
+.FirstPageImage {
+
+}
+
