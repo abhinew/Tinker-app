@@ -16,7 +16,7 @@ class MainPageOwner extends React.PureComponent {
                   </div>
                     <h1>{homeOwners[1].Location}</h1>
 
-                  <div className="homeOwnerImage" data-swipable="true" >
+                  <div className="homeOwnerImage" draggable="true" >
                     <img  src={homeOwners[1].url} alt="House" draggable></img>
                   </div>
                   <div className="homeInformation">

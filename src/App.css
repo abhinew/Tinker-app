@@ -73,12 +73,13 @@ ul {
   width: 100%;
   background-color: #303f9f;
   margin: auto;
+  text-align: center;
 }
 
 .topButtons a{
+  display: inline-block;
   width: 150px;
   height: 30px;
-  float: left;
   padding: 15px;
   margin-right:2px;
   color: #fff;
