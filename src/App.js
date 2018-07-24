@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import './App.css';
 import { Provider } from 'react-redux';
 import store from './store';
-import FirstPageComponent from './components/FirstPage';
+import FirstPage from './components/FirstPage';
 import MainPageTenant from './components/MainPageTenant';
 import { Route } from 'react-router-dom'
 import { connect } from 'react-redux'
