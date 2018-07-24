@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 import './App.css';
 import { Provider } from 'react-redux';
 import store from './store';
-import FirstPage from './components/FirstPage'
+import FirstPageComponent from './components/FirstPage';
+import MainPageTenant from './components/MainPageTenant';
 import { Route } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { BrowserRouter } from 'react-router-dom'
@@ -15,7 +16,9 @@ class App extends Component {
       <Provider store={store}>
       <BrowserRouter>
         <div className="App">
-
+          <Route exact path ='/main' component = {FirstPageComponent} />
+          <Route exact path ='/main/owner' component = {MainPageOwner} />
+          <Route exact path ='/main/tenant' component = {MainPageTenant} />
         
         
 
