@@ -1,6 +1,6 @@
 export  const homeOwners = [
     {
-        id: 1,
+        id: 0,
         name: "Tim",
         Location: "Amsterdam",
         pricePerMonth: 860,
@@ -20,7 +20,7 @@ export  const homeOwners = [
         url:"https://cloud.funda.nl/valentina_media/097/135/058_2160.jpg"
     },
     {
-        id: 1,
+        id: 2,
         name: "Wouter",
         Location: "Amsterdam",
         pricePerMonth: 960,
@@ -30,7 +30,7 @@ export  const homeOwners = [
         url:"https://cloud.funda.nl/valentina_media/097/615/625_2160.jpg"
     },
     {
-        id: 1,
+        id: 3,
         name: "Rein",
         Location: "Amsterdam",
         pricePerMonth: 560,
@@ -40,7 +40,7 @@ export  const homeOwners = [
         url:"https://cloud.funda.nl/valentina_media/097/285/435_720x480.jpg"
     },
     {
-        id: 1,
+        id: 4,
         name: "Alex",
         Location: "Amsterdam",
         pricePerMonth: 1060,
