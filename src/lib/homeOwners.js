@@ -1,3 +1,4 @@
+
 export  const homeOwners = [
     {
         id: 0,
@@ -17,7 +18,7 @@ export  const homeOwners = [
         size: 80,
         bathrooms: 1,
         bedrooms: 2,
-        url:"https://cloud.funda.nl/valentina_media/097/135/058_2160.jpg"
+        url:["https://cloud.funda.nl/valentina_media/097/135/058_2160.jpg", "https://cloud.funda.nl/valentina_media/097/135/074_2160.jpg"]
     },
     {
         id: 2,
