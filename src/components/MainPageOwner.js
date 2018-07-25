@@ -2,10 +2,20 @@ import * as React from 'react'
 import { connect } from 'react-redux'
 import { owners } from '../lib/owners_lib'
 import { Link } from 'react-router-dom'
-
-
+import { likeHOUSE, dislikeHOUSE, thinkHOUSE } from '../actions/tenants_action'
 
 class MainPageOwner extends React.PureComponent {
+  likeThisHouse = () => {
+    console.log("like")
+  }
+
+  dislikeThisHouse = () => {
+    console.log("dislike")
+    console.log(this.props.tenant.age)
+    this.props.dislikeHOUSE(0, 33)
+  }
+
+
   render() {
     return (<div>
       <div className="menu">
@@ -16,9 +26,9 @@ class MainPageOwner extends React.PureComponent {
         </div>
         <h1>{owners[1].Location}</h1>
         <div className="homeOwnerImage" data-swipable="true" >
-          <img className="Arrow-icons" src={require('../images/Button-Back.png')} alt = "" />
-          <img src={owners[1].url} alt="House" draggable></img>
-          <img className="Arrow-icons" src={require('../images/Button-Next.png')} alt = "" />
+          <img className="Arrow-icons" src={require('../images/Button-Back.png')} alt="" />
+          <img src={owners[0].url[0]} alt="House" draggable></img>
+          <img className="Arrow-icons" src={require('../images/Button-Next.png')} alt="" />
         </div>
         <div className="homeInformation">
           <ul>
@@ -29,8 +39,9 @@ class MainPageOwner extends React.PureComponent {
           </ul>
         </div>
         <div className="swipeButtons">
-          <button id="like">Like</button>
-          <button id="dislike">Dislike</button>
+          <button id="like" onClick={this.likeThisHouse}>Like</button>
+          <button id="dislike" onClick={this.ThinkThisHouse}>Think</button>
+          <button id="dislike" onClick={this.dislikeThisHouse}>Dislike</button>          
         </div>
       </div>
     </div>
@@ -38,4 +49,11 @@ class MainPageOwner extends React.PureComponent {
   }
 }
 
-export default connect(null, {})(MainPageOwner)
+const mapStateToProps = (state) => {
+  return {
+    tenant: state.tenant[0], // for the first time this is equal to the initial state defined in ./reducers/newWord
+    owner: state.owner[0]
+  }
+}
+
+export default connect(mapStateToProps, { likeHOUSE, dislikeHOUSE, thinkHOUSE })(MainPageOwner)

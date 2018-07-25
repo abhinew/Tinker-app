@@ -1,8 +1,8 @@
-export default function nextImage() {
+export function nextImage() {
     return owners[0].url[+1]
 }
 
-export default function previousImage() {
+export function previousImage() {
     if (owners[0].url.length < 1){
     return owners[0].url[0]
     } else {

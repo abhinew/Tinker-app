@@ -11,12 +11,12 @@ export function likeHOUSE(ownerID) {
   }
 }
 
-export function dislikeHOUSE(ownerID) {
+export function dislikeHOUSE(ownerName, ownerID) {
   return {
     type: DISLIKE_HOUSE,
-    payload: (
-      ownerID
-    )
+    payload: [
+      ownerName, ownerID
+    ]
   }
 }
 
