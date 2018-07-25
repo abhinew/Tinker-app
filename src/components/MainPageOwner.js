@@ -57,7 +57,6 @@ class MainPageOwner extends React.PureComponent {
   
 
   render() {
-    console.log("Hiiiii")
     return (<div>
       <div className="menu">
         <div className="topButtons">
