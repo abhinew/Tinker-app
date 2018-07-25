@@ -33,6 +33,7 @@ class MainPageTenant extends React.PureComponent {
                   <div className="swipeButtons">
                     <button id="like">Like</button>
                     <button id="dislike">Dislike</button>
+                    <button id="maybe">Maybe</button>
                   </div>
                 </div> 
           )
