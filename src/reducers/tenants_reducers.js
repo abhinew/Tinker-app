@@ -10,16 +10,19 @@ export default (state = tenants, action = []) => {
         case LIKE_HOUSE:
             console.log("LIKE_HOUSE_TENANT")
             newState[action.payload[0]].like = newState[action.payload[0]].like.concat(action.payload[1])
+            newState[action.payload[0]].lastOwnerIDSeen = newState[action.payload[0]].lastOwnerIDSeen + 1
             return newState
 
         case DISLIKE_HOUSE:
             console.log("DISLIKE_HOUSE_TENANT")
             newState[action.payload[0]].dislike = newState[action.payload[0]].dislike.concat(action.payload[1])
+            newState[action.payload[0]].lastOwnerIDSeen = newState[action.payload[0]].lastOwnerIDSeen + 1
             return newState
 
         case THINK_HOUSE:
             console.log("THINK_HOUSE_TENANT")
             newState[action.payload[0]].thinking = newState[action.payload[0]].thinking.concat(action.payload[1])
+            newState[action.payload[0]].lastOwnerIDSeen = newState[action.payload[0]].lastOwnerIDSeen + 1
             return newState
 
         default:

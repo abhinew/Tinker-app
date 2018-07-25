@@ -84,8 +84,9 @@ ul {
   text-align: center;
 }
 
-.homeOwnerImage, .tenantImage {
+.homeOwnerImage {
   display: flex;
+  
 }
 
 .homeOwnerImage img:hover {
