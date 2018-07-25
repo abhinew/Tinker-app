@@ -60,7 +60,11 @@
   color: white;
   border: 1px solid black;
 }
-
+.swipeButtons #maybe {
+  background-color: #FFA500;
+  color: white;
+  border: 1px solid black;
+}
 ul {
   list-style-type: none;
 }
