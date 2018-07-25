@@ -1,14 +1,28 @@
-// export default function nextImage() {
-//     return owners[0].url[+1]
-// }
+export function nextImage() {
+    let i = i++
+    console.log(owners[0].url[i])
+ 
 
-// export default function previousImage() {
-//     if (owners[0].url.length < 1){
-//     return owners[0].url[0]
-//     } else {
-//     return owners[0].url[-1]
-//     }
-// }
+
+}
+
+
+export function previousImage() {
+    return owners[0].url[+1]
+}
+
+export function imageCollection(){
+    let i = 0;
+
+
+}
+
+let n = 0;
+export function increment(){
+  n++;
+  return owners[0].url[n]
+}
+
 
 
 export const owners = [

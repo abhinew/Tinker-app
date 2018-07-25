@@ -1,11 +1,13 @@
 import * as React from 'react'
 import { connect } from 'react-redux'
-import { owners } from '../lib/owners_lib'
+import { owners, nextImage, previousImage} from '../lib/owners_lib'
 import { Link } from 'react-router-dom'
 
 
 
 class MainPageOwner extends React.PureComponent {
+
+
   render() {
     return (<div>
       <div className="menu">
@@ -15,10 +17,10 @@ class MainPageOwner extends React.PureComponent {
           <Link to='/chat'>Chat</Link>
         </div>
         <h1>{owners[4].Location}</h1>
-        <div className="homeOwnerImage" data-swipable="true" >
-          <img className="Arrow-icons" src={require('../images/Button-Back.png')} alt = "" />
-          <img src={owners[1].url} alt="House" draggable></img>
-          <img className="Arrow-icons" src={require('../images/Button-Next.png')} alt = "" />
+        <div className="homeOwnerImage" >
+          <img onClick={previousImage} className="Arrow-icons" src={require('../images/Button-Back.png')} alt = "" />
+          <img id="container" src={owners[1].url[1]} alt="House" draggable></img>
+          <img onClick={nextImage} className="Arrow-icons" src={require('../images/Button-Next.png')} alt = "" />
         </div>
         <div className="homeInformation">
           <ul>
@@ -38,4 +40,11 @@ class MainPageOwner extends React.PureComponent {
   }
 }
 
-export default connect(null, {})(MainPageOwner)
+const mapStateToProps = (state) => {
+  return {
+      owner: state.owner
+  }
+}
+
+export default connect(mapStateToProps, {})(MainPageOwner)
+nextImage();

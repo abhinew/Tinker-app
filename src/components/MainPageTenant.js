@@ -16,9 +16,9 @@ class MainPageTenant extends React.PureComponent {
                 </div>
                   <h1>{tenants[1].Location}</h1>
 
-                  <div className="tenantImage" data-swipable="true" >
+                  <div className="tenantImage" >
                     <img className="Arrow-icons" src={require('../images/Button-Back.png')} alt = "" />
-                    <img  src={tenants[0].url} alt="Face" draggable></img>
+                    <img  src={tenants[0].url} alt="Face" draggable="true"></img>
                     <img className="Arrow-icons" src={require('../images/Button-Next.png')} alt = "" />
                   </div>
                   <div className="tenantInformation">
@@ -39,5 +39,9 @@ class MainPageTenant extends React.PureComponent {
           )
     }
   }
+
+
+
+
 
 export default connect(null, {})(MainPageTenant)
