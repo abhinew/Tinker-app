@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { connect } from 'react-redux'
-import { tenants } from '../lib/tenants'
+import { tenants } from '../lib/tenants_lib'
 import { Link } from 'react-router-dom'
 
 

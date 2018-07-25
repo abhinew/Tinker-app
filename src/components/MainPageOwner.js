@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { connect } from 'react-redux'
-import { homeOwners } from '../lib/homeOwners'
+import { owners } from '../lib/owners_lib'
 import { Link } from 'react-router-dom'
 
 
@@ -12,17 +12,17 @@ class MainPageOwner extends React.PureComponent {
                     <Link to = '/'><button>Home</button></Link>
                     <Link to = '/chat'><button>Chat</button></Link>
                   </div>
-                    <h1>{homeOwners[1].Location}</h1>
+                    <h1>{owners[1].Location}</h1>
 
                   <div className="homeOwnerImage" data-swipable="true" >
-                    <img  src={homeOwners[1].url} alt="House" draggable></img>
+                    <img  src={owners[1].url} alt="House" draggable></img>
                   </div>
                   <div className="homeInformation">
                     <ul>
-                        <li>Size: {homeOwners[1].size} m2</li>
-                        <li>Bathrooms: {homeOwners[1].bathrooms}</li>
-                        <li>Bedrooms: {homeOwners[1].bedrooms}</li>
-                        <li>Price per month: {homeOwners[1].pricePerMonth}</li>
+                        <li>Size: {owners[1].size} m2</li>
+                        <li>Bathrooms: {owners[1].bathrooms}</li>
+                        <li>Bedrooms: {owners[1].bedrooms}</li>
+                        <li>Price per month: {owners[1].pricePerMonth}</li>
                     </ul>
                   </div>
                   <div className="swipeButtons">
