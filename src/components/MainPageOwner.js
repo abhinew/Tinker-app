@@ -74,7 +74,7 @@ class MainPageOwner extends React.PureComponent {
         </div>
         <div className="swipeButtons">
           <button id="like" onClick={this.handleClick}>Like</button>
-          <button id="dislike" onClick={this.ThinkThisHouse}>Think</button>
+          <button id="maybe" onClick={this.ThinkThisHouse}>Think</button>
           <button id="dislike" onClick={this.dislikeThisHouse}>Dislike</button>          
         </div>
       </div>
