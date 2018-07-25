@@ -34,7 +34,7 @@ export const owners = [
         size: 110,
         bathrooms: 1,
         bedrooms: 3,
-        url: ["https://cloud.funda.nl/valentina_media/097/615/625_2160.jpg"],
+        url: ["https://cloud.funda.nl/valentina_media/096/940/450_2160.jpg", "https://cloud.funda.nl/valentina_media/096/940/455_2160.jpg", "https://cloud.funda.nl/valentina_media/096/940/465_2160.jpg"],
         likeByTenant: [],
         like: [],
         dislike: []
@@ -47,7 +47,7 @@ export const owners = [
         size: 50,
         bathrooms: 1,
         bedrooms: 1,
-        url: ["https://cloud.funda.nl/valentina_media/097/285/435_720x480.jpg"],
+        url: ["https://cloud.funda.nl/valentina_media/097/285/435_720x480.jpg", "https://cloud.funda.nl/valentina_media/096/711/797_2160.jpg", "https://cloud.funda.nl/valentina_media/096/711/788_2160.jpg"],
         likeByTenant: [],
         like: [],
         dislike: []
@@ -60,7 +60,7 @@ export const owners = [
         size: 100,
         bathrooms: 1,
         bedrooms: 2,
-        url: ["https://cloud.funda.nl/valentina_media/095/533/790_720x480.jpg"],
+        url: ["https://cloud.funda.nl/valentina_media/095/533/790_720x480.jpg", "https://cloud.funda.nl/valentina_media/095/533/820_2160.jpg", "https://cloud.funda.nl/valentina_media/095/533/775_2160.jpg"],
         likeByTenant: [],
         like: [],
         dislike: []
