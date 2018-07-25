@@ -1,14 +1,30 @@
+// export default function nextImage() {
+//     return owners[0].url[+1]
+// }
+
+// export function previousImage() {
+//     if (owners[0].url.length < 1){
+//     return owners[0].url[0]
+//     } else {
+//     return owners[0].url[-1]
+//     }
+// }
+
+export function findOwnerIndex() {
+    //let currentImage = event.target.value;
+    //let currentOwnerIndex = owners.find(currentImage);
+    console.log("currentOwnerIndex");
+}
+
+export function previousImage() {
+    return owners[0].url.length - 1
+}
+
+
 export default function nextImage() {
     return owners[0].url[+1]
 }
 
-export default function previousImage() {
-    if (owners[0].url.length < 1){
-    return owners[0].url[0]
-    } else {
-    return owners[0].url[-1]
-    }
-}
 
 
 export const owners = [

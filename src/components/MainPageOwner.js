@@ -2,11 +2,30 @@ import * as React from 'react'
 import { connect } from 'react-redux'
 import { owners } from '../lib/owners_lib'
 import { Link } from 'react-router-dom'
-
+import { findOwnerIndex } from '../lib/owners_lib';
 
 
 class MainPageOwner extends React.PureComponent {
+
+   findOwnerIndex = (event) => {
+     console.log(event);
+    let currentImage = event.target.value;
+    let currentOwnerIndex = owners.find(currentImage);
+    console.log(currentImage);
+  }
+
+previousImage() {
+    return owners[0].url.length - 1
+}
+
+
+nextImage() {
+    
+}
+
+
   render() {
+    console.log("Hiiiii")
     return (<div>
       <div className="menu">
         <div className="topButtons">
@@ -16,9 +35,9 @@ class MainPageOwner extends React.PureComponent {
         </div>
         <h1>{owners[1].Location}</h1>
         <div className="homeOwnerImage" data-swipable="true" >
-          <img className="Arrow-icons" src={require('../images/Button-Back.png')} alt = "" />
-          <img src={owners[1].url} alt="House" draggable></img>
-          <img className="Arrow-icons" src={require('../images/Button-Next.png')} alt = "" />
+          <img  onClick={this.previousImage} className="Arrow-icons" src={require('../images/Button-Back.png')} />
+          <img onClick={this.findOwnerIndex} src={owners[0].url[0]} alt="House" draggable />
+          <img onClick={this.nextImage} className="Arrow-icons" src={require('../images/Button-Next.png')} />
         </div>
         <div className="homeInformation">
           <ul>
