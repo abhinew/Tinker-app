@@ -6,13 +6,18 @@ import { likeHOUSE, dislikeHOUSE, thinkHOUSE } from '../actions/tenants_action'
 
 class MainPageOwner extends React.PureComponent {
   likeThisHouse = () => {
-    console.log("like")
+    console.log("like this house")
+    this.props.likeHOUSE(this.props.tenant.tenantID, this.props.owner.ownerID)
   }
 
   dislikeThisHouse = () => {
-    console.log("dislike")
-    console.log(this.props.tenant.age)
-    this.props.dislikeHOUSE(0, 33)
+    console.log("dislike this house")
+    this.props.dislikeHOUSE(this.props.tenant.tenantID, this.props.owner.ownerID)
+  }
+
+  thinkThisHouse = () => {
+    console.log("think about this house")
+    this.props.thinkHOUSE(this.props.tenant.tenantID, this.props.owner.ownerID)
   }
 
 
@@ -41,8 +46,8 @@ class MainPageOwner extends React.PureComponent {
         </div>
         <div className="swipeButtons">
           <button id="like" onClick={this.likeThisHouse}>Like</button>
-          <button id="dislike" onClick={this.ThinkThisHouse}>Think</button>
-          <button id="dislike" onClick={this.dislikeThisHouse}>Dislike</button>          
+          <button id="think" onClick={this.thinkThisHouse}>Think</button>
+          <button id="dislike" onClick={this.dislikeThisHouse}>Dislike</button>
         </div>
       </div>
     </div>
@@ -52,8 +57,8 @@ class MainPageOwner extends React.PureComponent {
 
 const mapStateToProps = (state) => {
   return {
-    tenant: state.tenant[0], // for the first time this is equal to the initial state defined in ./reducers/newWord
-    owner: state.owner[0]
+    tenant: state.tenant[2], // for the first time this is equal to the initial state defined in ./reducers/newWord
+    owner: state.owner[3]
   }
 }
 

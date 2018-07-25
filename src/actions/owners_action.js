@@ -2,29 +2,29 @@ export const LIKE_TENANT = 'LIKE_TENANT'
 export const DISLIKE_TENANT = 'DISLIKE_TENANT'
 export const LIKE_HOUSE = 'LIKE_HOUSE'
 
-export function likeTenant(tenantID) {
+export function likeTENANT(tenantID, ownerID) {
   return {
     type: LIKE_TENANT,
-    payload: (
-      tenantID
-    )
+    payload: [
+      tenantID, ownerID
+    ]
   }
 }
 
-export function dislikeTenant(tenantID) {
+export function dislikeTENANT(tenantID, ownerID) {
   return {
     type: DISLIKE_TENANT,
-    payload: (
-      tenantID
-    )
+    payload: [
+      tenantID, ownerID
+    ]
   }
 }
 
-export function likeHouse(tenantID) {
+export function likeHOUSE(tenantID, ownerID) {
   return {
     type: LIKE_HOUSE,
-    payload: (
-      tenantID
-    )
+    payload: [
+      tenantID, ownerID
+    ]
   }
 }
