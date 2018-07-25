@@ -17,9 +17,9 @@ class MainPageTenant extends React.PureComponent {
                   <h1>{tenants[1].Location}</h1>
 
                   <div className="tenantImage" data-swipable="true" >
-                    <img className="Arrow-icons" src={require('../images/Button-Back.png')} />
+                    <img className="Arrow-icons" src={require('../images/Button-Back.png')} alt = "" />
                     <img  src={tenants[0].url} alt="Face" draggable></img>
-                    <img className="Arrow-icons" src={require('../images/Button-Next.png')} />
+                    <img className="Arrow-icons" src={require('../images/Button-Next.png')} alt = "" />
                   </div>
                   <div className="tenantInformation">
                     <ul>
@@ -33,6 +33,7 @@ class MainPageTenant extends React.PureComponent {
                   <div className="swipeButtons">
                     <button id="like">Like</button>
                     <button id="dislike">Dislike</button>
+                    <button id="maybe">Maybe</button>
                   </div>
                 </div> 
           )

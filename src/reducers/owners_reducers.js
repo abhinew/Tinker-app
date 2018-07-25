@@ -9,13 +9,13 @@ export default (state = owners, action = {}) => {
             return [
                 ...state,
                 state.like.concat(action.payload)
-                // remove from likeByTenant
+                // remove from likeByTenant (using indexOf and splice)
             ]
             case DISLIKE_TENANT:
             return [
                 ...state,
                 state.dislike.concat(action.payload)
-                // remove from likeByTenant
+                // remove from likeByTenant (using indexOf and splice)
             ]
             case LIKE_HOUSE:
             return [
