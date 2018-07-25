@@ -14,7 +14,7 @@ class MainPageOwner extends React.PureComponent {
           <Link to='/'>Home</Link>
           <Link to='/chat'>Chat</Link>
         </div>
-        <h1>{owners[1].Location}</h1>
+        <h1>{owners[4].Location}</h1>
         <div className="homeOwnerImage" data-swipable="true" >
           <img className="Arrow-icons" src={require('../images/Button-Back.png')} />
           <img src={owners[1].url[0]} alt="House" draggable></img>

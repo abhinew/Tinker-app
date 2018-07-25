@@ -1,14 +1,14 @@
-export default function nextImage() {
-    return owners[0].url[+1]
-}
+// export default function nextImage() {
+//     return owners[0].url[+1]
+// }
 
-export default function previousImage() {
-    if (owners[0].url.length < 1){
-    return owners[0].url[0]
-    } else {
-    return owners[0].url[-1]
-    }
-}
+// export default function previousImage() {
+//     if (owners[0].url.length < 1){
+//     return owners[0].url[0]
+//     } else {
+//     return owners[0].url[-1]
+//     }
+// }
 
 
 export const owners = [
