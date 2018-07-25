@@ -43,27 +43,29 @@
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
+    width: 100%
 }
 
 .swipeButtons #like {
   background-color: #4caf50;
   color: white;
   border: 1px solid black;
-  margin-left: 50px;
+  width: 150px;
 }
 
 .swipeButtons #dislike {
   background-color: #b71c1c;
   color: white;
   border: 1px solid black;
+  width: 150px;
 }
 .swipeButtons #think {
   background-color: #FFA500;
   color: white;
   border: 1px solid black;
+  width: 150px;
 }
 ul {
   list-style-type: none;

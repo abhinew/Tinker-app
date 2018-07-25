@@ -4,7 +4,28 @@ import { owners } from '../lib/owners_lib'
 import { Link } from 'react-router-dom'
 import { likeHOUSE, dislikeHOUSE, thinkHOUSE } from '../actions/tenants_action'
 
+let i = 0
 class MainPageOwner extends React.PureComponent {
+  state = { index: 0 }
+
+  nextImage= () => {
+    if (i === this.props.owner.url.length -1 ){
+      i = 0;
+    } else {
+      i++
+    }
+    this.setState({index: i})
+  }
+
+  previousImage= () => {
+    if (i == 0){
+    i = this.props.owner.url.length -1 
+  } else {
+    i--
+  }
+    this.setState({index: i})
+  }
+  
   likeThisHouse = () => {
     console.log("like this house")
     this.props.likeHOUSE(this.props.tenant.tenantID, this.props.owner.ownerID)
@@ -20,6 +41,20 @@ class MainPageOwner extends React.PureComponent {
     this.props.thinkHOUSE(this.props.tenant.tenantID, this.props.owner.ownerID)
   }
 
+  nextHouse = () => {
+    if (i === this.props.owner.length -1 ){
+      i = 0;
+    } else {
+      i++
+    }
+    this.setState({index: i})
+  }
+  
+  handleClick = () => {
+    this.likeThisHouse()
+  }
+
+  
 
   render() {
     return (<div>
@@ -31,16 +66,16 @@ class MainPageOwner extends React.PureComponent {
         </div>
         <h1>{owners[1].Location}</h1>
         <div className="homeOwnerImage" data-swipable="true" >
-          <img className="Arrow-icons" src={require('../images/Button-Back.png')} alt="" />
-          <img src={owners[0].url[0]} alt="House" draggable></img>
-          <img className="Arrow-icons" src={require('../images/Button-Next.png')} alt="" />
+          <img onClick ={this.previousImage} className="Arrow-icons" src={require('../images/Button-Back.png')} alt="" />
+          <img id="test" src={this.props.owner.url[this.state.index]} alt="House" draggable></img>
+          <img onClick={this.nextImage} className="Arrow-icons" src={require('../images/Button-Next.png')} alt="" />
         </div>
         <div className="homeInformation">
           <ul>
-            <li>Size: {owners[1].size} m2</li>
-            <li>Bathrooms: {owners[1].bathrooms}</li>
-            <li>Bedrooms: {owners[1].bedrooms}</li>
-            <li>Price per month: {owners[1].pricePerMonth}</li>
+            <li>Size: {this.props.owner.size} m2</li>
+            <li>Bathrooms: {this.props.owner.bathrooms}</li>
+            <li>Bedrooms: {this.props.owner.bedrooms}</li>
+            <li>Price per month: {this.props.owner.pricePerMonth}</li>
           </ul>
         </div>
         <div className="swipeButtons">
