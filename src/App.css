@@ -29,11 +29,13 @@
 
 
 .homeOwnerImage img {
+  border-radius: 15px;
   height: 500px;
 }
 
 .tenantImage img {
   height: 500px;
+  border-radius: 15px;
 }
 
 .swipeButtons {
@@ -68,7 +70,41 @@ ul {
   margin: 20px;
 }
 
-.FirstPageImage {
+.menu {
+  height: 55px;
+  width: 100%;
+  background-color: #303f9f;
+  margin: auto;
+  text-align: center;
+}
 
+.homeOwnerImage, .tenantImage {
+  display: flex;
+}
+
+.homeOwnerImage img:hover {
+  opacity: 0.6;
+  
+}
+
+.tenantImage img:hover {
+  opacity: 0.6;
+}
+
+.Arrow-icons {
+  max-height: 50px;
+  width: 50px;
+  margin: auto;
+}
+.topButtons a{
+  display: inline-block;
+  width: 150px;
+  height: 30px;
+  padding: 15px;
+  margin-right:2px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 17pt;
+  text-align: center;
 }
 
