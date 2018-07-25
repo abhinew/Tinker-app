@@ -16,7 +16,7 @@ export const owners = [
     {
         ownerID: 1,
         name: "Arien",
-        Location: "Amsterdam",
+        Location: "Rotterdam",
         pricePerMonth: 760,
         size: 80,
         bathrooms: 1,
@@ -29,7 +29,7 @@ export const owners = [
     {
         ownerID: 2,
         name: "Wouter",
-        Location: "Amsterdam",
+        Location: "Tehran",
         pricePerMonth: 960,
         size: 110,
         bathrooms: 1,
@@ -42,7 +42,7 @@ export const owners = [
     {
         ownerID: 3,
         name: "Rein",
-        Location: "Amsterdam",
+        Location: "Aachen",
         pricePerMonth: 560,
         size: 50,
         bathrooms: 1,
@@ -55,7 +55,7 @@ export const owners = [
     {
         ownerID: 4,
         name: "Alex",
-        Location: "Amsterdam",
+        Location: "New Delhi",
         pricePerMonth: 1060,
         size: 100,
         bathrooms: 1,
