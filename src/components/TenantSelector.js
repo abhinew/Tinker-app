@@ -30,9 +30,7 @@ class MainPageTenant extends React.PureComponent {
       <h1>{tenants[1].Location}</h1>
 
       <div className="tenantImage" data-swipable="true" >
-        <img className="Arrow-icons" src={require('../images/Button-Back.png')} alt="" />
         <img src={tenants[0].url} alt="Face" draggable></img>
-        <img className="Arrow-icons" src={require('../images/Button-Next.png')} alt="" />
       </div>
       <div className="tenantInformation">
         <ul>
@@ -54,8 +52,8 @@ class MainPageTenant extends React.PureComponent {
 
 const mapStateToProps = (state) => {
   return {
-    tenant: state.tenant[2], // for the first time this is equal to the initial state defined in ./reducers/newWord
-    owner: state.owner[3]
+    tenant: state.tenant, // for the first time this is equal to the initial state defined in ./reducers/newWord
+    owner: state.owner
   }
 }
 
