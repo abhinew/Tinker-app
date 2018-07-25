@@ -2,26 +2,18 @@ import * as React from 'react'
 import { connect } from 'react-redux'
 import { owners } from '../lib/owners_lib'
 import { Link } from 'react-router-dom'
-import { findOwnerIndex } from '../lib/owners_lib';
-
+import { likeHOUSE, dislikeHOUSE, thinkHOUSE } from '../actions/tenants_action'
 
 class MainPageOwner extends React.PureComponent {
-
-   findOwnerIndex = (event) => {
-     console.log(event);
-    let currentImage = event.target.value;
-    let currentOwnerIndex = owners.find(currentImage);
-    console.log(currentImage);
+  likeThisHouse = () => {
+    console.log("like")
   }
 
-previousImage() {
-    return owners[0].url.length - 1
-}
-
-
-nextImage() {
-    
-}
+  dislikeThisHouse = () => {
+    console.log("dislike")
+    console.log(this.props.tenant.age)
+    this.props.dislikeHOUSE(0, 33)
+  }
 
 
   render() {
@@ -35,9 +27,9 @@ nextImage() {
         </div>
         <h1>{owners[1].Location}</h1>
         <div className="homeOwnerImage" data-swipable="true" >
-          <img  onClick={this.previousImage} className="Arrow-icons" src={require('../images/Button-Back.png')} />
-          <img onClick={this.findOwnerIndex} src={owners[0].url[0]} alt="House" draggable />
-          <img onClick={this.nextImage} className="Arrow-icons" src={require('../images/Button-Next.png')} />
+          <img className="Arrow-icons" src={require('../images/Button-Back.png')} alt="" />
+          <img src={owners[0].url[0]} alt="House" draggable></img>
+          <img className="Arrow-icons" src={require('../images/Button-Next.png')} alt="" />
         </div>
         <div className="homeInformation">
           <ul>
@@ -48,8 +40,9 @@ nextImage() {
           </ul>
         </div>
         <div className="swipeButtons">
-          <button id="like">Like</button>
-          <button id="dislike">Dislike</button>
+          <button id="like" onClick={this.likeThisHouse}>Like</button>
+          <button id="dislike" onClick={this.ThinkThisHouse}>Think</button>
+          <button id="dislike" onClick={this.dislikeThisHouse}>Dislike</button>          
         </div>
       </div>
     </div>
@@ -57,4 +50,11 @@ nextImage() {
   }
 }
 
-export default connect(null, {})(MainPageOwner)
+const mapStateToProps = (state) => {
+  return {
+    tenant: state.tenant[0], // for the first time this is equal to the initial state defined in ./reducers/newWord
+    owner: state.owner[0]
+  }
+}
+
+export default connect(mapStateToProps, { likeHOUSE, dislikeHOUSE, thinkHOUSE })(MainPageOwner)
