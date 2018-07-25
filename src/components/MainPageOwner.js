@@ -4,6 +4,7 @@ import { homeOwners } from '../lib/homeOwners'
 import { Link } from 'react-router-dom'
 
 
+
 class MainPageOwner extends React.PureComponent {
     render(){
       return ( <div>
@@ -14,11 +15,11 @@ class MainPageOwner extends React.PureComponent {
                     <Link to = '/chat'>Chat</Link>
                   </div>
                   </div>
-                    <h1>{homeOwners[1].Location}</h1>
+                    <h1>{homeOwners[3].Location}</h1>
                   <div className="homeOwnerImage" data-swipable="true" >
-                    <img className="Arrow-icons" src={require('../images/Button-Back.png')} />
+                    <img className="Arrow-icons" src={require('../images/Button-Back.png')}/>
                     <img  src={homeOwners[1].url} alt="House" draggable></img>
-                     <img className="Arrow-icons" src={require('../images/Button-Next.png')} />
+                     <img className="Arrow-icons" src={require('../images/Button-Next.png')}/>
                   </div>
                   <div className="homeInformation">
                     <ul>

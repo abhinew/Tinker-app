@@ -18,12 +18,12 @@ class MainPageTenant extends React.PureComponent {
 
                   <div className="tenantImage" data-swipable="true" >
                     <img className="Arrow-icons" src={require('../images/Button-Back.png')} />
-                    <img  src={tenants[1].url} alt="House" draggable></img>
+                    <img  src={tenants[0].url} alt="Face" draggable></img>
                     <img className="Arrow-icons" src={require('../images/Button-Next.png')} />
                   </div>
                   <div className="tenantInformation">
                     <ul>
-                        <li>Name: {tenants[1].name}</li>
+                        <li>Name: {tenants[0].name}</li>
                         <li>age: {tenants[1].age}</li>
                         <li>occupation: {tenants[1].occupation}</li>
                         <li>company: {tenants[1].company}</li>
