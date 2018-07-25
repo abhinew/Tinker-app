@@ -1,3 +1,16 @@
+export default function nextImage() {
+    return owners[0].url[+1]
+}
+
+export default function previousImage() {
+    if (owners[0].url.length < 1){
+    return owners[0].url[0]
+    } else {
+    return owners[0].url[-1]
+    }
+}
+
+
 export const owners = [
     {
         ownerID: 0,
@@ -7,7 +20,7 @@ export const owners = [
         size: 100,
         bathrooms: 1,
         bedrooms: 2,
-        url: ["https://cloud.funda.nl/valentina_media/097/400/696_720x480.jpg"],
+        url: ["https://cloud.funda.nl/valentina_media/097/400/696_720x480.jpg", "https://cloud.funda.nl/valentina_media/097/400/698_1080.jpg", "https://cloud.funda.nl/valentina_media/097/400/699_1080.jpg"],
         likeByTenant: [],
         like: [],
         dislike: []
@@ -20,7 +33,7 @@ export const owners = [
         size: 80,
         bathrooms: 1,
         bedrooms: 2,
-        url: ["https://cloud.funda.nl/valentina_media/097/135/058_2160.jpg"],
+        url: ["https://cloud.funda.nl/valentina_media/097/135/058_2160.jpg", "https://cloud.funda.nl/valentina_media/097/135/074_2160.jpg", "https://cloud.funda.nl/valentina_media/097/135/075_1080.jpg"],
         likeByTenant: [],
         like: [],
         dislike: []
