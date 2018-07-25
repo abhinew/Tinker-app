@@ -1,6 +1,5 @@
-import * as React from 'react'
 import { Link } from 'react-router-dom'
-// import FirstPage from './FirstPage'
+import React, { PureComponent } from 'react'
 
 export default class FirstPageComponent extends React.PureComponent {
     render() {

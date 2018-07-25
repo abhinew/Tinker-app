@@ -29,11 +29,13 @@
 
 
 .homeOwnerImage img {
+  border-radius: 15px;
   height: 500px;
 }
 
 .tenantImage img {
   height: 500px;
+  border-radius: 15px;
 }
 
 .swipeButtons {
@@ -76,6 +78,24 @@ ul {
   text-align: center;
 }
 
+.homeOwnerImage, .tenantImage {
+  display: flex;
+}
+
+.homeOwnerImage img:hover {
+  opacity: 0.6;
+  
+}
+
+.tenantImage img:hover {
+  opacity: 0.6;
+}
+
+.Arrow-icons {
+  max-height: 50px;
+  width: 50px;
+  margin: auto;
+}
 .topButtons a{
   display: inline-block;
   width: 150px;
@@ -87,3 +107,4 @@ ul {
   font-size: 17pt;
   text-align: center;
 }
+
