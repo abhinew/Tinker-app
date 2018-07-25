@@ -6,22 +6,22 @@ import { tenants } from '../lib/tenants_lib'
 export default (state = tenants, action = []) => {
     let newState = [...state]
     switch (action.type) {
-        
+
         case LIKE_HOUSE:
-            return {
-                
-                like: state[0].like.concat(action.payload)
-            }
+            console.log("LIKE_HOUSE_TENANT")
+            newState[action.payload[0]].like = newState[action.payload[0]].like.concat(action.payload[1])
+            return newState
+
         case DISLIKE_HOUSE:
-            
+            console.log("DISLIKE_HOUSE_TENANT")
             newState[action.payload[0]].dislike = newState[action.payload[0]].dislike.concat(action.payload[1])
             return newState
 
         case THINK_HOUSE:
-            return {
+            console.log("THINK_HOUSE_TENANT")
+            newState[action.payload[0]].thinking = newState[action.payload[0]].thinking.concat(action.payload[1])
+            return newState
 
-                thinking: state[0].thinking.concat(action.payload)
-            }
         default:
             return state
     }
