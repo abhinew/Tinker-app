@@ -27,16 +27,22 @@
   to { transform: rotate(360deg); }
 }
 
-.homeOwnerImages img {
-  border-radius: 15px;
-  height: 500px;
-}
 
-.tenantImage img {
+#test {
   height: 500px;
   width: 750px;
   border-radius: 15px;
 }
+
+.titleHomePage {
+  font-family: 'Gaegu', cursive;
+  font-size: 35px;
+}
+
+.homePic img {
+  border-radius: 15px;
+}
+
 
 
 .swipeButtons {
@@ -121,6 +127,11 @@ ul {
   z-index: 0;
 }
 
+.tenantImage img {
+  height: 500px;
+  width: 750px;
+  border-radius: 15px;
+}
 .match {
   height: 500px;
   width: 750px;

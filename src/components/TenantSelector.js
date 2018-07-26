@@ -46,11 +46,12 @@ class TenantSelector extends React.Component {
 
       <div className="menu">
         <div className="topButtons">
-          <Link to='/profile/owner'>Owner</Link>
+          <Link to='/profile/owner'>Owner Profile</Link>
           <Link to='/'>Home</Link>
           <Link to='/chat'>Chat</Link>
         </div>
       </div>
+
       {!this.props.owner.likeByTenant[0] && <div>
         <h1>No Tenant is found so far</h1>
       </div>}
