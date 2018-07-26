@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-export default class HouseSelectorPresenter extends React.PureComponent {
+export default class TenantsSelectorPresenter extends React.PureComponent {
 
   render() {
     return (<div>
