@@ -23,7 +23,7 @@ export const owners = [
         bathrooms: 1,
         bedrooms: 2,
         url: ["https://cloud.funda.nl/valentina_media/097/135/058_2160.jpg", "https://cloud.funda.nl/valentina_media/097/135/074_2160.jpg", "https://cloud.funda.nl/valentina_media/097/135/075_1080.jpg"],
-        likeByTenant: [],
+        likeByTenant: [2, 3, 1],
         like: [],
         dislike: [],
         lastTenantIDSeen: 2
