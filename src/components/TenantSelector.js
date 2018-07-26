@@ -1,11 +1,15 @@
 import * as React from 'react'
 import { connect } from 'react-redux'
-// import { tenants } from '../lib/tenants_lib'
+import { tenants } from '../lib/tenants_lib'
+import { owners } from '../lib/owners_lib'
 import { Link } from 'react-router-dom'
 import { likeTENANT, dislikeTENANT } from '../actions/owners_action'
 
 
 class TenantSelector extends React.PureComponent {
+  state = {
+    display: "none"
+  }
 
   likeThisTenant = () => {
     console.log("like this tenant")
@@ -19,7 +23,27 @@ class TenantSelector extends React.PureComponent {
     this.props.dislikeTENANT(this.props.owner.likeByTenant[0], this.props.owner.ownerID)
   }
 
+  handleClickT = () => {
+    this.likeThisTenant()
+    this.showMatch()
+  }
+
+  showMatch = () => {
+   this.setState({
+     display: ""
+   })
+  }
+
+  removeMatch = () => {
+    this.setState({
+      display: "none"
+    })
+  }
+
+
+
   render() {
+
     return (<div>
       <div className="menu">
         <div className="topButtons">
@@ -38,6 +62,13 @@ class TenantSelector extends React.PureComponent {
 
         <div className="tenantImage" data-swipable="true" >
           <img src={this.props.tenant[this.props.owner.likeByTenant[0]].url} alt="Face" draggable></img>
+            <div className="match" style={{display:this.state.display}} onClick={this.removeMatch}>
+              <img src={require('../images/its-a-match.png')}/>
+                <div className="matchImages">
+                  <img className="homeOwnerMatchImage" src={tenants[0].url}/>
+                  <img className="tenantMatchImage" src={owners[0].url[0]}/>
+                  </div>
+            </div>
         </div>
         <div className="tenantInformation">
           <ul>
@@ -48,7 +79,7 @@ class TenantSelector extends React.PureComponent {
           </ul>
         </div>
         <div className="swipeButtons">
-          <button id="like" onClick={this.likeThisTenant}>Like</button>
+          <button id="like" onClick={this.handleClickT}>Like</button>
           <button id="dislike" onClick={this.dislikeThisTenant}>Dislike</button>
         </div>
       </div>}
@@ -65,3 +96,4 @@ const mapStateToProps = (state) => {
 }
 
 export default connect(mapStateToProps, { likeTENANT, dislikeTENANT })(TenantSelector)
+
