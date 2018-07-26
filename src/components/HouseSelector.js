@@ -87,7 +87,7 @@ class HouseSelector extends React.PureComponent {
 
 const mapStateToProps = (state) => {
   return {
-    tenant: state.tenant[2], // for the first time this is equal to the initial state defined in ./reducers/newWord
+    tenant: { ...state.tenant[2]}, // for the first time this is equal to the initial state defined in ./reducers/newWord
     owner: state.owner
   }
 }
