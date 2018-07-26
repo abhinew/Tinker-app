@@ -10,7 +10,7 @@ class LoginTenant extends React.PureComponent {
     displayRegisteredTenants(tenant) {
         
         return (<li>
-            <Link to={ `/tenants/${tenant.name}` }>{tenant.name}</Link> 
+            <Link to={ "/tenants/" }>{tenant.name}</Link> 
             </li>); 
     }
 

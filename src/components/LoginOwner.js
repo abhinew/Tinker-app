@@ -10,7 +10,7 @@ class LoginOwner extends React.PureComponent {
     displayRegisteredOwners(owner) {
         
         return (<li>
-            <Link to={ `/owners/${owner.name}` }>{owner.name}</Link> 
+            <Link to={"/owners/" }>{owner.name}</Link> 
             </li>); 
     }
 

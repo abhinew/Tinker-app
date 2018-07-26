@@ -5,10 +5,12 @@ export default class ProfilePageTenantComponent extends React.PureComponent {
     render() {
         return (
                 <div>
-                     <div className="topButtons">
-                        <Link to = '/main/houseselector'><button>Home</button></Link>
-                    </div>
-
+                     <div className="menu">
+                        <div className="topButtons">
+                            <Link to='/tenants'>Back</Link>
+                            <Link to='/'>Logout</Link>
+                        </div>
+                     </div>
                 </div>
 
         )
