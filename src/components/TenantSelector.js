@@ -1,8 +1,8 @@
 import * as React from 'react'
 import { connect } from 'react-redux'
-// import { tenants } from '../lib/tenants_lib'
 import { Link } from 'react-router-dom'
 import { likeTENANT, dislikeTENANT } from '../actions/owners_action'
+import TenantsSelectorPresenter from './TenantsSelectorPresenter';
 
 
 class TenantSelector extends React.PureComponent {
@@ -14,13 +14,12 @@ class TenantSelector extends React.PureComponent {
 
   dislikeThisTenant = () => {
     console.log("dislike this tenant")
-    // console.log(this.props.owner.likeByTenant[0])
-    // console.log(this.props.tenant[this.props.owner.likeByTenant[0]].tenantID)
     this.props.dislikeTENANT(this.props.owner.likeByTenant[0], this.props.owner.ownerID)
   }
 
   render() {
     return (<div>
+      {console.log(this.props.owner.likeByTenant)}
       <div className="menu">
         <div className="topButtons">
           <Link to='/profile/owner'>Owner</Link>
@@ -34,23 +33,11 @@ class TenantSelector extends React.PureComponent {
       </div>}
 
       {this.props.owner.likeByTenant[0] && <div>
-        <h1>{this.props.tenant[this.props.owner.likeByTenant[0]].name}</h1>
+        <TenantsSelectorPresenter owner={this.props.owner} tenant={this.props.tenant}
+        likeThisTenant = {this.likeThisTenant} dislikeThisTenant = {this.dislikeThisTenant} />
+        
+        {console.log("after tenantpresenter")}
 
-        <div className="tenantImage" data-swipable="true" >
-          <img src={this.props.tenant[this.props.owner.likeByTenant[0]].url} alt="Face" draggable></img>
-        </div>
-        <div className="tenantInformation">
-          <ul>
-            <li><b>Age:</b> {this.props.tenant[this.props.owner.likeByTenant[0]].age}</li>
-            <li><b>Occupation:</b> {this.props.tenant[this.props.owner.likeByTenant[0]].occupation}</li>
-            <li><b>Company:</b> {this.props.tenant[this.props.owner.likeByTenant[0]].company}</li>
-            <li><b>Income per month:</b> {this.props.tenant[this.props.owner.likeByTenant[0]].incomePerMonth} €</li>
-          </ul>
-        </div>
-        <div className="swipeButtons">
-          <button id="like" onClick={this.likeThisTenant}>Like</button>
-          <button id="dislike" onClick={this.dislikeThisTenant}>Dislike</button>
-        </div>
       </div>}
     </div>
     )

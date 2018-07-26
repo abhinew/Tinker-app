@@ -10,7 +10,6 @@ class HouseSelector extends React.PureComponent {
   state = { index: 0 }
 
   nextImage = () => {
-    console.log(this.props.tenant.lastOwnerIDSeen)
     if (i === this.props.owner[this.props.tenant.lastOwnerIDSeen].url.length - 1) {
       i = 0;
     } else {
@@ -73,9 +72,8 @@ class HouseSelector extends React.PureComponent {
       </div>
 
       <HouseSelectorPresenter owner={this.props.owner} tenant={this.props.tenant}
-      nextImage = {this.nextImage} previousImage = {this.previousImage}
-      likeThisHouse = {this.likeThisHouse} thinkThisHouse = {this.handleClickThink}
-      dislikeThisHouse = {this.handleClickDislike} state = {this.state} />
+      nextImage = {this.nextImage} previousImage = {this.previousImage} 
+      state = {this.state} />
       
       <div className="swipeButtons">
         <button id="like" onClick={this.likeThisHouse}>Like</button>
