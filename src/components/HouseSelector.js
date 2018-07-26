@@ -70,16 +70,18 @@ class HouseSelector extends React.PureComponent {
           <Link to='/chat'>Chat</Link>
         </div>
       </div>
+      {this.props.tenant.lastOwnerIDSeen === (this.props.owner.length) && <div>
+        <h1>No more houses is available</h1>
+      </div>}
 
-      <HouseSelectorPresenter owner={this.props.owner} tenant={this.props.tenant}
-      nextImage = {this.nextImage} previousImage = {this.previousImage} 
-      state = {this.state} />
-      
-      <div className="swipeButtons">
-        <button id="like" onClick={this.likeThisHouse}>Like</button>
-        <button id="think" onClick={this.handleClickThink}>Think</button>
-        <button id="dislike" onClick={this.handleClickDislike}>Dislike</button>
-      </div>
+      {this.props.tenant.lastOwnerIDSeen !== (this.props.owner.length) && <div>
+        <HouseSelectorPresenter owner={this.props.owner} tenant={this.props.tenant}
+          nextImage={this.nextImage} previousImage={this.previousImage}
+          state={this.state} likeThisHouse={this.likeThisHouse}
+          handleClickThink={this.handleClickThink} handleClickDislike={this.handleClickDislike} />
+      </div>}
+
+
     </div>
     )
   }
@@ -87,7 +89,7 @@ class HouseSelector extends React.PureComponent {
 
 const mapStateToProps = (state) => {
   return {
-    tenant: { ...state.tenant[2]}, // for the first time this is equal to the initial state defined in ./reducers/newWord
+    tenant: { ...state.tenant[2] }, // for the first time this is equal to the initial state defined in ./reducers/newWord
     owner: state.owner
   }
 }

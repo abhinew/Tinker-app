@@ -4,15 +4,16 @@ import { Link } from 'react-router-dom'
 import { likeTENANT, dislikeTENANT } from '../actions/owners_action'
 import TenantsSelectorPresenter from './TenantsSelectorPresenter';
 
-
 class TenantSelector extends React.Component {
   state = {
     display: "none",
-    img: this.props.tenant[this.props.owner.likeByTenant[0]].url
+    display2: "",
+    imageAddress: ""
   }
 
   likeThisTenant = () => {
     console.log("like this tenant")
+    this.setState({imageAddress: this.props.tenant[this.props.owner.likeByTenant[0]].url})
     this.props.likeTENANT(this.props.owner.likeByTenant[0], this.props.owner.ownerID)
   }
 
@@ -28,22 +29,20 @@ class TenantSelector extends React.Component {
 
   showMatch = () => {
     this.setState({
-      display: ""
+      display: "",
+      display2: "none"
     })
   }
 
   removeMatch = () => {
     this.setState({
-      display: "none"
+      display: "none",
+      display2: ""
     })
   }
 
   render() {
     return (<div>
-
-      {/* {this.props.owner.like[this.props.owner.like.length - 1] && this.setState({
-        img: this.props.tenant[this.props.owner.like[this.props.owner.like.length - 1]].url
-      })} */}
 
       <div className="menu">
         <div className="topButtons">
@@ -52,19 +51,14 @@ class TenantSelector extends React.Component {
           <Link to='/chat'>Chat</Link>
         </div>
       </div>
-
       {!this.props.owner.likeByTenant[0] && <div>
         <h1>No Tenant is found so far</h1>
       </div>}
 
       {this.props.owner.likeByTenant[0] && <div>
         <TenantsSelectorPresenter owner={this.props.owner} tenant={this.props.tenant}
-          likeThisTenant={this.handleClickT} dislikeThisTenant={this.dislikeThisTenant}
-          removeMatch={this.removeMatch} state={this.state} />
-
-        {/* {console.log("after tenantpresenter")} */}
-
-
+          handleClickT={this.handleClickT} dislikeThisTenant={this.dislikeThisTenant}
+          removeMatch={this.removeMatch} state={this.state} imageAddress = {this.img} />
       </div>}
     </div>
     )
