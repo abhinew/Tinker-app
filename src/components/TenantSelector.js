@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { connect } from 'react-redux'
 import { tenants } from '../lib/tenants_lib'
+import { owners } from '../lib/owners_lib'
 import { Link } from 'react-router-dom'
 import { likeTENANT, dislikeTENANT } from '../actions/owners_action'
 
@@ -30,8 +31,16 @@ class MainPageTenant extends React.PureComponent {
       <h1>{tenants[1].Location}</h1>
 
       <div className="tenantImage" data-swipable="true" >
-        <img src={tenants[0].url} alt="Face" draggable></img>
+        <img className="testing" src={tenants[0].url} alt="Face" draggable></img>
+        <div className="match">
+        <img src={require('../images/its-a-match.png')}/>
+          <div className="matchImages">
+            <img className="homeOwnerMatchImage" src={tenants[0].url}/>
+            <img className="tenantMatchImage" src={owners[0].url[0]}/> 
+            </div>
       </div>
+      </div>
+     
       <div className="tenantInformation">
         <ul>
           <li>Name: {tenants[0].name}</li>

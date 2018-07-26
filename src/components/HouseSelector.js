@@ -72,7 +72,7 @@ class MainPageOwner extends React.PureComponent {
           <Link to='/chat'>Chat</Link>
         </div>
         <h1>{this.props.owner[this.props.tenant.lastOwnerIDSeen].Location}</h1>
-        <div className="homeOwnerImage" data-swipable="true" >
+        <div className="homeOwnerImages" data-swipable="true" >
           <img onClick ={this.previousImage} className="Arrow-icons" src={require('../images/Button-Back.png')} alt="" />
           <img id="test" src={this.props.owner[this.props.tenant.lastOwnerIDSeen].url[this.state.index]} alt="House" draggable></img>
           <img onClick={this.nextImage} className="Arrow-icons" src={require('../images/Button-Next.png')} alt="" />

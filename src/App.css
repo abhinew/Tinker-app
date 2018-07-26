@@ -27,8 +27,7 @@
   to { transform: rotate(360deg); }
 }
 
-
-.homeOwnerImage img {
+.homeOwnerImages img {
   border-radius: 15px;
   height: 500px;
 }
@@ -37,6 +36,7 @@
   height: 500px;
   border-radius: 15px;
 }
+
 
 .swipeButtons {
     padding: 15px 32px;
@@ -85,8 +85,7 @@ ul {
 }
 
 .homeOwnerImage {
-  display: flex;
-  
+  display: flex;  
 }
 
 .homeOwnerImage img:hover {
@@ -103,6 +102,7 @@ ul {
   width: 50px;
   margin: auto;
 }
+
 .topButtons a{
   display: inline-block;
   width: 150px;
@@ -115,3 +115,46 @@ ul {
   text-align: center;
 }
 
+.tenantImage {
+  position: relative;
+  z-index: 0;
+}
+
+.match {
+  height: 500px;
+  width: 750px;
+  border: 2px solid black;
+  border-radius: 15px;
+  background-color: white;
+  left: 0;
+  right: 0;
+  top: 0;
+  margin: auto;
+  position: absolute;
+  display: none;
+}
+
+.match img {
+  width: 500px;
+  height: 250px;
+  margin: auto;
+}
+
+.matchImages {
+  display: flex;
+  justify-content: space-evenly
+}
+
+.match .matchImages .homeOwnerMatchImage {
+  width: 200px;
+  height: 200px;
+  border: 2px solid black;
+  border-radius: 100%;
+}
+
+.match .matchImages .tenantMatchImage {
+  width: 200px;
+  height: 200px;
+  border: 2px solid black;
+  border-radius: 100%;
+}
