@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import { likeHOUSE, dislikeHOUSE, thinkHOUSE } from '../actions/tenants_action'
 
 let i = 0
-class MainPageOwner extends React.PureComponent {
+class HouseSelector extends React.PureComponent {
   state = { index: 0 }
 
   nextImage= () => {
@@ -29,17 +29,17 @@ class MainPageOwner extends React.PureComponent {
   
   likeThisHouse = () => {
     console.log("like this house")
-    this.props.likeHOUSE(this.props.tenant.tenantID, this.props.owner.ownerID)
+    this.props.likeHOUSE(this.props.tenant.tenantID, this.props.owner[this.props.tenant.lastOwnerIDSeen].ownerID)
   }
 
   dislikeThisHouse = () => {
     console.log("dislike this house")
-    this.props.dislikeHOUSE(this.props.tenant.tenantID, this.props.owner.ownerID)
+    this.props.dislikeHOUSE(this.props.tenant.tenantID, this.props.owner[this.props.tenant.lastOwnerIDSeen].ownerID)
   }
 
   thinkThisHouse = () => {
     console.log("think about this house")
-    this.props.thinkHOUSE(this.props.tenant.tenantID, this.props.owner.ownerID)
+    this.props.thinkHOUSE(this.props.tenant.tenantID, this.props.owner[this.props.tenant.lastOwnerIDSeen].ownerID)
   }
 
   nextHouse = () => {
@@ -79,10 +79,10 @@ class MainPageOwner extends React.PureComponent {
         </div>
         <div className="homeInformation">
           <ul>
-            <li>Size: {this.props.owner[this.props.tenant.lastOwnerIDSeen].size} m2</li>
-            <li>Bathrooms: {this.props.owner[this.props.tenant.lastOwnerIDSeen].bathrooms}</li>
-            <li>Bedrooms: {this.props.owner[this.props.tenant.lastOwnerIDSeen].bedrooms}</li>
-            <li>Price per month: {this.props.owner[this.props.tenant.lastOwnerIDSeen].pricePerMonth}</li>
+            <li><b>Size:</b> {this.props.owner[this.props.tenant.lastOwnerIDSeen].size} m2</li>
+            <li><b>Bathrooms:</b> {this.props.owner[this.props.tenant.lastOwnerIDSeen].bathrooms}</li>
+            <li><b>Bedrooms:</b> {this.props.owner[this.props.tenant.lastOwnerIDSeen].bedrooms}</li>
+            <li><b>Price per month:</b> {this.props.owner[this.props.tenant.lastOwnerIDSeen].pricePerMonth} €</li>
           </ul>
         </div>
         <div className="swipeButtons">
@@ -98,9 +98,9 @@ class MainPageOwner extends React.PureComponent {
 
 const mapStateToProps = (state) => {
   return {
-    tenant: state.tenant[0], // for the first time this is equal to the initial state defined in ./reducers/newWord
+    tenant: state.tenant[2], // for the first time this is equal to the initial state defined in ./reducers/newWord
     owner: state.owner
   }
 }
 
-export default connect(mapStateToProps, { likeHOUSE, dislikeHOUSE, thinkHOUSE })(MainPageOwner)
+export default connect(mapStateToProps, { likeHOUSE, dislikeHOUSE, thinkHOUSE })(HouseSelector)
