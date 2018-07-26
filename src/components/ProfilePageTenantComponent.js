@@ -6,7 +6,7 @@ export default class ProfilePageTenantComponent extends React.PureComponent {
         return (
                 <div>
                      <div className="topButtons">
-                        <Link to = '/main/tenant'><button>Home</button></Link>
+                        <Link to = '/main/houseselector'><button>Home</button></Link>
                     </div>
 
                 </div>

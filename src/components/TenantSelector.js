@@ -6,6 +6,9 @@ import TenantsSelectorPresenter from './TenantsSelectorPresenter';
 
 
 class TenantSelector extends React.PureComponent {
+  state = {
+    display: "none"
+  }
 
   likeThisTenant = () => {
     console.log("like this tenant")
@@ -17,7 +20,27 @@ class TenantSelector extends React.PureComponent {
     this.props.dislikeTENANT(this.props.owner.likeByTenant[0], this.props.owner.ownerID)
   }
 
+  handleClickT = () => {
+    this.likeThisTenant()
+    this.showMatch()
+  }
+
+  showMatch = () => {
+   this.setState({
+     display: ""
+   })
+  }
+
+  removeMatch = () => {
+    this.setState({
+      display: "none"
+    })
+  }
+
+
+
   render() {
+
     return (<div>
       {console.log(this.props.owner.likeByTenant)}
       <div className="menu">
@@ -38,6 +61,7 @@ class TenantSelector extends React.PureComponent {
         
         {console.log("after tenantpresenter")}
 
+
       </div>}
     </div>
     )
@@ -52,3 +76,4 @@ const mapStateToProps = (state) => {
 }
 
 export default connect(mapStateToProps, { likeTENANT, dislikeTENANT })(TenantSelector)
+
