@@ -12,9 +12,6 @@ import HouseSelector from './components/HouseSelector'
 import ProfilePageOwnerComponent from './components/ProfilePageOwnerComponent'
 import ProfilePageTenantComponent from './components/ProfilePageTenantComponent'
 
-
-
-
 class App extends Component {
   render() {
     return (

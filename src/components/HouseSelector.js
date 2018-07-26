@@ -3,30 +3,30 @@ import { connect } from 'react-redux'
 // import { owners } from '../lib/owners_lib'
 import { Link } from 'react-router-dom'
 import { likeHOUSE, dislikeHOUSE, thinkHOUSE } from '../actions/tenants_action'
+import HouseSelectorPresenter from './HouseSelectorPresenter'
 
 let i = 0
 class HouseSelector extends React.PureComponent {
   state = { index: 0 }
 
-  nextImage= () => {
-    console.log(this.props.tenant.lastOwnerIDSeen)
-    if (i === this.props.owner[this.props.tenant.lastOwnerIDSeen].url.length -1 ){
+  nextImage = () => {
+    if (i === this.props.owner[this.props.tenant.lastOwnerIDSeen].url.length - 1) {
       i = 0;
     } else {
       i++
     }
-    this.setState({index: i})
+    this.setState({ index: i })
   }
 
-  previousImage= () => {
-    if (i === 0){
-    i = this.props.owner[this.props.tenant.lastOwnerIDSeen].url.length -1 
-  } else {
-    i--
+  previousImage = () => {
+    if (i === 0) {
+      i = this.props.owner[this.props.tenant.lastOwnerIDSeen].url.length - 1
+    } else {
+      i--
+    }
+    this.setState({ index: i })
   }
-    this.setState({index: i})
-  }
-  
+
   likeThisHouse = () => {
     console.log("like this house")
     this.props.likeHOUSE(this.props.tenant.tenantID, this.props.owner[this.props.tenant.lastOwnerIDSeen].ownerID)
@@ -43,14 +43,14 @@ class HouseSelector extends React.PureComponent {
   }
 
   nextHouse = () => {
-    if (i === this.props.owner.length -1 ){
+    if (i === this.props.owner.length - 1) {
       i = 0;
     } else {
       i++
     }
-    this.setState({index: i})
+    this.setState({ index: i })
   }
-  
+
   handleClickThink = () => {
     this.thinkThisHouse()
     this.nextImage()
@@ -61,8 +61,6 @@ class HouseSelector extends React.PureComponent {
     this.nextImage()
   }
 
-  
-
   render() {
     return (<div>
       <div className="menu">
@@ -71,25 +69,16 @@ class HouseSelector extends React.PureComponent {
           <Link to='/'>Home</Link>
           <Link to='/chat'>Chat</Link>
         </div>
-        <h1>{this.props.owner[this.props.tenant.lastOwnerIDSeen].Location}</h1>
-        <div className="homeOwnerImages" data-swipable="true" >
-          <img onClick ={this.previousImage} className="Arrow-icons" src={require('../images/Button-Back.png')} alt="" />
-          <img id="test" src={this.props.owner[this.props.tenant.lastOwnerIDSeen].url[this.state.index]} alt="House" draggable></img>
-          <img onClick={this.nextImage} className="Arrow-icons" src={require('../images/Button-Next.png')} alt="" />
-        </div>
-        <div className="homeInformation">
-          <ul>
-            <li><b>Size:</b> {this.props.owner[this.props.tenant.lastOwnerIDSeen].size} m2</li>
-            <li><b>Bathrooms:</b> {this.props.owner[this.props.tenant.lastOwnerIDSeen].bathrooms}</li>
-            <li><b>Bedrooms:</b> {this.props.owner[this.props.tenant.lastOwnerIDSeen].bedrooms}</li>
-            <li><b>Price per month:</b> {this.props.owner[this.props.tenant.lastOwnerIDSeen].pricePerMonth} €</li>
-          </ul>
-        </div>
-        <div className="swipeButtons">
-          <button id="like" onClick={this.likeThisHouse}>Like</button>
-          <button id="think" onClick={this.handleClickThink}>Think</button>
-          <button id="dislike" onClick={this.handleClickDislike}>Dislike</button>
-        </div>
+      </div>
+
+      <HouseSelectorPresenter owner={this.props.owner} tenant={this.props.tenant}
+      nextImage = {this.nextImage} previousImage = {this.previousImage} 
+      state = {this.state} />
+      
+      <div className="swipeButtons">
+        <button id="like" onClick={this.likeThisHouse}>Like</button>
+        <button id="think" onClick={this.handleClickThink}>Think</button>
+        <button id="dislike" onClick={this.handleClickDislike}>Dislike</button>
       </div>
     </div>
     )
