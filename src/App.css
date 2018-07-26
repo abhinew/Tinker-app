@@ -34,6 +34,7 @@
 
 .tenantImage img {
   height: 500px;
+  width: 750px;
   border-radius: 15px;
 }
 
@@ -131,7 +132,6 @@ ul {
   top: 0;
   margin: auto;
   position: absolute;
-  display: none;
 }
 
 .match img {
