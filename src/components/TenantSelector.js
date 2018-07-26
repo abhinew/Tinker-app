@@ -61,10 +61,6 @@ class TenantSelector extends React.Component {
         <TenantsSelectorPresenter owner={this.props.owner} tenant={this.props.tenant}
           likeThisTenant={this.handleClickT} dislikeThisTenant={this.dislikeThisTenant}
           removeMatch={this.removeMatch} state={this.state} />
-
-        {/* {console.log("after tenantpresenter")} */}
-
-
       </div>}
     </div>
     )
