@@ -70,4 +70,32 @@ export const owners = [
         dislike: [],
         lastTenantIDSeen: 0
     },
+    {
+        ownerID: 5,
+        name: "Peter",
+        location: "Leiden",
+        pricePerMonth: 850,
+        size: 80,
+        bathrooms: 1,
+        bedrooms: 2,
+        url: ["https://cloud.funda.nl/valentina_media/097/196/845_2160.jpg", "https://cloud.funda.nl/valentina_media/097/196/862_2160.jpg", "https://cloud.funda.nl/valentina_media/097/196/825_2160.jpg"],
+        likeByTenant: [],
+        like: [],
+        dislike: [],
+        lastTenantIDSeen: 0
+    },
+    {
+        ownerID: 6,
+        name: "Tim",
+        location: "Groningen",
+        pricePerMonth: 1850,
+        size: 180,
+        bathrooms: 2,
+        bedrooms: 5,
+        url: ["https://cloud.funda.nl/valentina_media/094/558/378_2160.jpg", "https://cloud.funda.nl/valentina_media/094/558/381_2160.jpg", "https://cloud.funda.nl/valentina_media/094/558/387_2160.jpg"],
+        likeByTenant: [],
+        like: [],
+        dislike: [],
+        lastTenantIDSeen: 0
+    },
 ]

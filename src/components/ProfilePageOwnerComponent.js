@@ -35,11 +35,12 @@ class ProfilePageOwnerComponent extends React.PureComponent {
                             <li><b>Company:</b> {this.props.tenant[url].company}</li>
                             <li><b>Income per month:</b> {this.props.tenant[url].incomePerMonth} €</li>
                         </ul>
+                        
                     </div>
                     )}
                 </div>
                 <div className="ownerMatches">
-                    <h2>You've got {this.props.owner[1].like.length} matches!</h2>
+                    <h2>You've got {this.props.owner[this.props.location.pathname.slice(-1)].like.length} matches!</h2>
                 </div>
                 <div className="ownerCandidates">
                     {this.props.owner[this.props.location.pathname.slice(-1)].like.map(url => <div className="candidateContainer">
@@ -51,6 +52,7 @@ class ProfilePageOwnerComponent extends React.PureComponent {
                             <li><b>Company:</b> {this.props.tenant[url].company}</li>
                             <li><b>Income per month:</b> {this.props.tenant[url].incomePerMonth} €</li>
                         </ul>
+                        <a href="https://api.whatsapp.com/send?phone=15551234567"><img className="whatsApp" src="https://qph.fs.quoracdn.net/main-qimg-ab05a3e6a691977d72b4e0c6c3c0edb6"/></a>
                     </div>
 
                     )}
