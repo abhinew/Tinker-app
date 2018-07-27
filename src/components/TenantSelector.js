@@ -46,7 +46,8 @@ class TenantSelector extends React.Component {
     return (<div>
       <div className="menu">
         <div className="topButtons">
-          <Link to='/profile/owner'>Owner Profile</Link>
+          <Link to={ `/profile/owners/${this.props.location.pathname.slice(-1)}` }>Owner Profile</Link>
+
           <Link to='/'>Home</Link>
           <Link to='/chat'>Chat</Link>
         </div>

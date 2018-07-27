@@ -29,17 +29,17 @@ class HouseSelector extends React.PureComponent {
 
   likeThisHouse = () => {
     console.log("like this house")
-    this.props.likeHOUSE(this.props.tenants[this.props.location.pathname.slice(-1)].tenantID, this.props.owner[this.props.tenants[this.props.location.pathname.slice(-1)].lastOwnerIDSeen].ownerID)
+    this.props.likeHOUSE(this.props.tenants[this.props.location.pathname.slice(-1)].tenantID, this.props.owners[this.props.tenants[this.props.location.pathname.slice(-1)].lastOwnerIDSeen].ownerID)
   }
 
   dislikeThisHouse = () => {
     console.log("dislike this house")
-    this.props.dislikeHOUSE(this.props.tenants[this.props.location.pathname.slice(-1)].tenantID, this.props.owner[this.props.tenants[this.props.location.pathname.slice(-1)].lastOwnerIDSeen].ownerID)
+    this.props.dislikeHOUSE(this.props.tenants[this.props.location.pathname.slice(-1)].tenantID, this.props.owners[this.props.tenants[this.props.location.pathname.slice(-1)].lastOwnerIDSeen].ownerID)
   }
 
   thinkThisHouse = () => {
     console.log("think about this house")
-    this.props.thinkHOUSE(this.props.tenants[this.props.location.pathname.slice(-1)].tenantID, this.props.owner[this.props.tenants[this.props.location.pathname.slice(-1)].lastOwnerIDSeen].ownerID)
+    this.props.thinkHOUSE(this.props.tenants[this.props.location.pathname.slice(-1)].tenantID, this.props.owners[this.props.tenants[this.props.location.pathname.slice(-1)].lastOwnerIDSeen].ownerID)
   }
 
   nextHouse = () => {
@@ -63,11 +63,11 @@ class HouseSelector extends React.PureComponent {
 
   render() {
     return (<div>
-      {console.log("hello")}
-      {console.log(this.props.location.pathname.slice(-1))}
+      {/* {console.log("hello")} */}
+      {/* {console.log(this.props.location.pathname.slice(-1))} */}
       <div className="menu">
         <div className="topButtons">
-          <Link to='/profile/tenant'>Profile</Link>
+          <Link to={ `/profile/tenants/${this.props.location.pathname.slice(-1)}` }>Profile</Link>
           <Link to='/'>Home</Link>
           <Link to='/chat'>Chat</Link>
         </div>

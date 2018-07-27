@@ -7,7 +7,7 @@ export default class ProfilePageTenantComponent extends React.PureComponent {
                 <div>
                      <div className="menu">
                         <div className="topButtons">
-                            <Link to='/tenants'>Back</Link>
+                            <Link to={ `/tenants/${this.props.location.pathname.slice(-1)}` }>Back</Link>
                             <Link to='/'>Logout</Link>
                         </div>
                      </div>

@@ -23,8 +23,8 @@ class App extends Component {
           <Route exact path ='/' component = {FirstPageComponent} />
           <Route path ="/tenants/:tenantID" component = {HouseSelector} />
           <Route path ='/owners/:ownerID' component = {TenantSelector} />
-          <Route exact path ='/profile/owner' component = {ProfilePageOwnerComponent} />
-          <Route exact path ='/profile/tenant' component = {ProfilePageTenantComponent} />
+          <Route path ='/profile/owners/:ownerID' component = {ProfilePageOwnerComponent} />
+          <Route path ='/profile/tenants/:tenantID' component = {ProfilePageTenantComponent} />
           <Route exact path="/tenantsLogin" component={LoginTenant} />
           <Route exact path="/ownersLogin" component={LoginOwner} />
         </div>
