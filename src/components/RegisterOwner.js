@@ -19,8 +19,7 @@ class RegisterOwner extends Component {
       likeByTenant: [],
       like: [],
       dislike: [],
-      lastTenantIDSeen: ''
-
+      lastTenantIDSeen: 0
     }
   }
 
