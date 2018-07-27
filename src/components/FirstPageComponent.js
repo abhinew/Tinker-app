@@ -15,9 +15,9 @@ export default class FirstPageComponent extends React.PureComponent {
             <div>
             <Link to='/ownersLogin' className="FirstPageButton"><button>I am the owner</button></Link>
             <Link to='/tenantsLogin' className="FirstPageButton"><button>I am a tenant</button></Link>
+            </div>           
             </div>
-            </div>
-
+            
         )
     }
 }

@@ -16,7 +16,6 @@ class LoginTenant extends React.PureComponent {
     }
     
     render() {
-        console.log(this.props.tenant)
         return (
             <div>
                 <h1>Registered tenants</h1>

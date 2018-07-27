@@ -3,13 +3,12 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import RegisterOwner from './RegisterOwner';
 import { addOwner } from '../actions/owners_action'
-
+import SimpleAppBar from './SimpleAppBar'
 class LoginOwner extends React.PureComponent {
 
     displayRegisteredOwners(owner) {        
         return (<li key={owner.ownerID}>
             <Link to={ `/owners/${owner.ownerID}` }>{owner.name}</Link> 
-
             </li>); 
     }
 
@@ -21,6 +20,7 @@ class LoginOwner extends React.PureComponent {
                 { !this.props.owner && 'Loading...' }
                 {(this.props.owner)?<ul>{ this.props.owner.map(this.displayRegisteredOwners) }</ul>:null}
                 <RegisterOwner onAddUser = {this.props.addOwner}/>
+                
             </div> 
         )
     }

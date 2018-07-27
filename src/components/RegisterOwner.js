@@ -4,6 +4,7 @@ import AppBar from 'material-ui/AppBar';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 import PropTypes from "prop-types";
+import SimpleAppBar from './SimpleAppBar';
 
 class RegisterOwner extends Component {
   constructor(props){
@@ -59,9 +60,7 @@ class RegisterOwner extends Component {
       <div>
         <MuiThemeProvider>
           <div>
-          <AppBar
-             title="Register"
-           />
+          <SimpleAppBar title="Register"/>
            <TextField
              hintText="Enter the Name"
              floatingLabelText="First Name"
@@ -100,7 +99,7 @@ class RegisterOwner extends Component {
              <br/> 
            <br/>
            <br/>
-           <RaisedButton label="Submit" primary={true} style={style} onClick={(event) => this.handleClick(event)}/>
+           <RaisedButton label="Submit" primary={true} style={{style}} onClick={(event) => this.handleClick(event)}/>
           </div>
          </MuiThemeProvider>
       </div>
@@ -114,7 +113,7 @@ RegisterOwner.propTypes = {
 }
 
 const style = {
-  margin: 15,
+  margin: 15
 };
 
 export default RegisterOwner;

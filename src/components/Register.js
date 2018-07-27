@@ -4,6 +4,8 @@ import AppBar from 'material-ui/AppBar';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 import PropTypes from "prop-types";
+import SimpleAppBar from './SimpleAppBar'
+
 
 class Register extends Component {
   constructor(props){
@@ -55,9 +57,7 @@ class Register extends Component {
       <div>
         <MuiThemeProvider>
           <div>
-          <AppBar
-             title="Register"
-           />
+          <SimpleAppBar style={{color:'#303f9f'}} title ="Register" />
            <TextField
              hintText="Enter your Name"
              floatingLabelText="First Name"
@@ -90,7 +90,7 @@ class Register extends Component {
              <br/> 
            <br/>
            <br/>
-           <RaisedButton label="Submit" primary={true} style={style} onClick={(event) => this.handleClick(event)}/>
+           <RaisedButton label="Submit" primary={true}  style={{'background-color': '#303f9f'}} onClick={(event) => this.handleClick(event)}/>
           </div>
          </MuiThemeProvider>
       </div>
