@@ -10,7 +10,7 @@ export const tenants = [
         like: [],
         dislike: [],
         thinking: [],
-        lastOwnerIDSeen: 0
+        lastOwnerIDSeen: 2
     },
     {   
         tenantID: 1,

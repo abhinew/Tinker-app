@@ -63,8 +63,6 @@ class HouseSelector extends React.PureComponent {
 
   render() {
     return (<div>
-      {/* {console.log("hello")} */}
-      {/* {console.log(this.props.location.pathname.slice(-1))} */}
       <div className="menu">
         <div className="topButtons">
           <Link to={ `/profile/tenants/${this.props.location.pathname.slice(-1)}` }>Profile</Link>
