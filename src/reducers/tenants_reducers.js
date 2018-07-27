@@ -27,7 +27,7 @@ export default (state = tenants, action = []) => {
         
         case ADD_TENANT:
             newState.push({
-                tenantID: Math.ceil(Math.random()*10),
+                tenantID: newState.length,
                 name: action.payload[0],
                 age: action.payload[1],
                 occupation: action.payload[2],
