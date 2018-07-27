@@ -13,8 +13,8 @@ export default class FirstPageComponent extends React.PureComponent {
             <img src={require('../images/FirstPageImage_Small.jpg')} alt="FirstPage" className = "FirstPageImage"/>
             </div>
             <div>
-            <Link to='/ownersLogin' className="FirstPageButton"><button>I am the owner</button></Link>
-            <Link to='/tenantsLogin' className="FirstPageButton"><button>I am a tenant</button></Link>
+            <Link to='/ownersLogin'><button className="firstpageButton"><b>I'm an owner</b></button></Link>
+            <Link to='/tenantsLogin'><button className="firstpageButton"><b>I'm a tenant</b></button></Link>
             </div>
             </div>
 
