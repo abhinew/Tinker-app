@@ -5,18 +5,18 @@ export default class TenantsSelectorPresenter extends React.PureComponent {
     render() {
         return (<div>
             <h1>{this.props.tenants[this.props.owner.likeByTenant[0]].name}</h1>
-            
-            
+
+
             <div className="tenantImage" data-swipable="true" >
                 <img src={this.props.tenants[this.props.owner.likeByTenant[0]].url} alt="Face" draggable></img>
                 {this.props.owner.like[0] &&
-                <div className="match" style={{ display: this.props.state.display }} onClick={this.props.removeMatch}>
-                    <img src={require('../images/its-a-match.png')} alt = "match" />
-                    <div className="matchImages">
-                        <img className="homeOwnerMatchImage" src={this.props.state.imageAddress} alt = "tenant" />
-                        <img className="tenantMatchImage" src={this.props.owner.url[0]} alt = "owner" />
-                    </div>
-                </div>}
+                    <div className="match" style={{ display: this.props.state.display }} onClick={this.props.removeMatch}>
+                        <img src={require('../images/its-a-match.png')} alt="match" />
+                        <div className="matchImages">
+                            <img className="homeOwnerMatchImage" src={this.props.state.imageAddress} alt="tenant" />
+                            <img className="tenantMatchImage" src={this.props.owner.url[0]} alt="owner" />
+                        </div>
+                    </div>}
             </div>
             <div className="tenantInformation" style={{ display: this.props.state.display2 }}>
                 <ul>

@@ -13,7 +13,12 @@ class Register extends Component {
       age:'',
       occupation: '',
       company: '',
-      incomePerMonth: ''
+      incomePerMonth: '',
+      url: [],
+      like: [],
+      dislike: [],
+      thinking: [],
+      lastOwnerIDSeen: ''
     }
   }
 
@@ -24,8 +29,26 @@ class Register extends Component {
       age: this.state.age,
       occupation: this.state.occupation,
       company: this.state.company,
-      incomePerMonth: this.state.incomePerMonth
+      incomePerMonth: this.state.incomePerMonth,
+      url: this.state.url,
+      like: this.state.like,
+      dislike: this.state.dislike,
+      thinking: this.state.thinking,
+      lastOwnerIDSeen: this.state.lastOwnerIDSeen
     });
+
+    this.setState({
+      first_name:'',
+      age:'',
+      occupation: '',
+      company: '',
+      incomePerMonth: '',
+      url: [],
+      like: [],
+      dislike: [],
+      thinking: [],
+      lastOwnerIDSeen: ''
+    })
   }
   render() {
     return (
