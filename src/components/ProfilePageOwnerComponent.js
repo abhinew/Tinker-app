@@ -10,7 +10,7 @@ class ProfilePageOwnerComponent extends React.PureComponent {
                 <div>
                       <div className="menu">
                         <div className="topButtons">
-                            <Link to={"/owners/"}>Back</Link>
+                            <Link to={ `/owners/${this.props.location.pathname.slice(-1)}` }>Back</Link>
                             <Link to='/chat'>Logout</Link>
                         </div>
                     </div>
