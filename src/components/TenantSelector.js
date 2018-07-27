@@ -52,8 +52,8 @@ class TenantSelector extends React.Component {
         </div>
       </div>
 
-      {!this.props.owners[this.props.location.pathname.slice(-1)].likeByTenant[0] && <div>
-        <h1>No Tenant is found so far</h1>
+      {!this.props.owners[this.props.location.pathname.slice(-1)].likeByTenant[0] && <div className="noTenantFound">
+        <h1>No more tenants!</h1>
       </div>}
 
       {this.props.owners[this.props.location.pathname.slice(-1)].likeByTenant[0] && <div>

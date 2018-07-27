@@ -70,8 +70,8 @@ class HouseSelector extends React.PureComponent {
           <Link to='/chat'>Chat</Link>
         </div>
       </div>
-      {this.props.tenants[this.props.location.pathname.slice(-1)].lastOwnerIDSeen === (this.props.owners.length) && <div>
-        <h1>No more houses is available</h1>
+      {this.props.tenants[this.props.location.pathname.slice(-1)].lastOwnerIDSeen === (this.props.owners.length) && <div className="noMoreHouses">
+        <h1>No more houses is available!</h1>
       </div>}
 
       {this.props.tenants[this.props.location.pathname.slice(-1)].lastOwnerIDSeen !== (this.props.owners.length) && <div>

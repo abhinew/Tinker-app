@@ -262,3 +262,16 @@ ul {
     grid-auto-flow: row;
 }
 
+.noTenantFound {
+  margin-top: 500px;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+}
+
+.noMoreHouses {
+  margin-top: 500px;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+}
