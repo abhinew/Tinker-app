@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-import Register from './Register';
+import RegisterTenant from './RegisterTenant';
 import { addTenant } from '../actions/tenants_action'
 
 class LoginTenant extends React.PureComponent {
@@ -25,7 +25,7 @@ class LoginTenant extends React.PureComponent {
                 this.props.tenants &&
                 <ul>{ this.props.tenants.map(this.displayRegisteredTenants) }</ul>
                 }
-                <Register onAddUser ={this.props.addTenant}/>   
+                <RegisterTenant onAddUser ={this.props.addTenant} />   
             </div> 
         )
     }

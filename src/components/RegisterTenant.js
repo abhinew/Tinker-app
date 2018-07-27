@@ -5,7 +5,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 import PropTypes from "prop-types";
 
-class Register extends Component {
+class RegisterTenant extends Component {
   constructor(props){
     super(props);
     this.state={
@@ -18,7 +18,7 @@ class Register extends Component {
       like: [],
       dislike: [],
       thinking: [],
-      lastOwnerIDSeen: ''
+      lastOwnerIDSeen: 0
     }
   }
 
@@ -98,8 +98,7 @@ class Register extends Component {
   }
 }
 
-
-Register.propTypes = {
+RegisterTenant.propTypes = {
   onAddUser: PropTypes.func.isRequired
 }
 
@@ -107,4 +106,4 @@ const style = {
   margin: 15,
 };
 
-export default Register;
+export default RegisterTenant;

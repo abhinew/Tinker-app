@@ -39,7 +39,7 @@ export function addOwner(user) {
       user.location,
       user.pricePerMonth,
       user.size,
-      user.bathromms,
+      user.bathrooms,
       user.bedrooms,
       user.url,
       user.likeByTenant,

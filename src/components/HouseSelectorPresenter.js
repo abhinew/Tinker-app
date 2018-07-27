@@ -4,7 +4,7 @@ export default class HouseSelectorPresenter extends React.PureComponent {
 
   render() {
     return (<div>
-      <h1>{this.props.owners[this.props.tenant.lastOwnerIDSeen].Location}</h1>
+      <h1>{this.props.owners[this.props.tenant.lastOwnerIDSeen].location}</h1>
       <div className="homeOwnerImage" data-swipable="true" >
         <img onClick={this.props.previousImage} className="Arrow-icons" src={require('../images/Button-Back.png')} alt="" />
         <img id="test" src={this.props.owners[this.props.tenant.lastOwnerIDSeen].url[this.props.state.index]} alt="House" draggable></img>
