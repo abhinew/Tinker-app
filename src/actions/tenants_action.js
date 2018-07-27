@@ -39,7 +39,12 @@ export function addTenant(user) {
       user.age,
       user.occupation,
       user.company,
-      user.incomePerMonth
+      user.incomePerMonth,
+      user.url,
+      user.like,
+      user.dislike,
+      user.thinking,
+      user.lastOwnerIDSeen
     ]
   }
 }

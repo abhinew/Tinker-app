@@ -1,4 +1,4 @@
-import { LIKE_TENANT, DISLIKE_TENANT, LIKE_HOUSE } from '../actions/owners_action'
+import { LIKE_TENANT, DISLIKE_TENANT, LIKE_HOUSE, ADD_OWNER } from '../actions/owners_action'
 import { owners } from '../lib/owners_lib'
 
 // state is the tenants database
@@ -24,6 +24,24 @@ export default (state = owners, action = []) => {
             console.log("LIKE_HOUSE_OWNER")
             newState[action.payload[1]].likeByTenant = newState[action.payload[1]].likeByTenant.concat(action.payload[0])
             return newState
+
+        case ADD_OWNER:
+        newState.push({
+            ownerID: newState.length,
+            name: action.payload[0],
+            location: action.payload[1],
+            pricePerMonth: action.payload[2],
+            size: action.payload[3],
+            bathrooms: action.payload[4],
+            bedrooms: action.payload[5],
+            url: action.payload[6],
+            likeByTenant: action.payload[7],
+            like: action.payload[8],
+            dislike: action.payload[9],
+            lastTenantIDSeen: action.payload[10]
+        });
+        return newState;    
+        
         default:
             return state
     }

@@ -32,7 +32,12 @@ export default (state = tenants, action = []) => {
                 age: action.payload[1],
                 occupation: action.payload[2],
                 company: action.payload[3],
-                incomePerMonth: action.payload[4]
+                incomePerMonth: action.payload[4],
+                url: action.payload[5],
+                like: action.payload[6],
+                dislike: action.payload[7],
+                thinking: action.payload[8],
+                lastOwnerIDSeen: action.payload[9]
             });
             return newState;
 

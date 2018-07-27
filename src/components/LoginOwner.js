@@ -1,14 +1,12 @@
 import * as React from 'react';
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-import Register from './Register';
-
+import RegisterOwner from './RegisterOwner';
+import { addOwner } from '../actions/owners_action'
 
 class LoginOwner extends React.PureComponent {
 
-    displayRegisteredOwners(owner) {
-        
-
+    displayRegisteredOwners(owner) {        
         return (<li key={owner.ownerID}>
             <Link to={ `/owners/${owner.ownerID}` }>{owner.name}</Link> 
 
@@ -22,12 +20,13 @@ class LoginOwner extends React.PureComponent {
                 <h1>Registered owners</h1>
                 { !this.props.owner && 'Loading...' }
                 {(this.props.owner)?<ul>{ this.props.owner.map(this.displayRegisteredOwners) }</ul>:null}
-                <Register />
+                <RegisterOwner onAddUser = {this.props.addOwner}/>
             </div> 
         )
     }
-
 }
+
+
 const mapStateToProps = (state) => {
     return {
       tenant: state.tenant, // for the first time this is equal to the initial state defined in ./reducers/newWord
@@ -35,4 +34,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, null) (LoginOwner) 
+export default connect(mapStateToProps, { addOwner }) (LoginOwner) 
