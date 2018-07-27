@@ -5,6 +5,7 @@ import { likeTENANT, dislikeTENANT } from '../actions/owners_action'
 import TenantsSelectorPresenter from './TenantsSelectorPresenter';
 
 class TenantSelector extends React.Component {
+  
   state = {
     display: "none",
     display2: "",
@@ -43,7 +44,6 @@ class TenantSelector extends React.Component {
 
   render() {
     return (<div>
-
       <div className="menu">
         <div className="topButtons">
           <Link to='/profile/owner'>Owner Profile</Link>

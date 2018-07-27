@@ -21,7 +21,7 @@ class App extends Component {
       <BrowserRouter>
         <div className="App">
           <Route exact path ='/' component = {FirstPageComponent} />
-          <Route exact path ='/tenants/' component = {HouseSelector} />
+          <Route path ="/tenants/:tenantID" component = {HouseSelector} />
           <Route exact path ='/owners/' component = {TenantSelector} />
           <Route exact path ='/profile/owner' component = {ProfilePageOwnerComponent} />
           <Route exact path ='/profile/tenant' component = {ProfilePageTenantComponent} />
