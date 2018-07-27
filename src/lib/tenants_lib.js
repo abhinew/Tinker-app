@@ -1,5 +1,5 @@
 export const tenants = [
-    {   
+    {
         tenantID: 0,
         name: "Sjoerd",
         age: 26,
@@ -12,7 +12,7 @@ export const tenants = [
         thinking: [],
         lastOwnerIDSeen: 2
     },
-    {   
+    {
         tenantID: 1,
         name: "Abi",
         age: 29,
@@ -25,7 +25,7 @@ export const tenants = [
         thinking: [],
         lastOwnerIDSeen: 0
     },
-    {   
+    {
         tenantID: 2,
         name: "Mohammad",
         age: 30,
@@ -38,7 +38,7 @@ export const tenants = [
         thinking: [],
         lastOwnerIDSeen: 0
     },
-    {   
+    {
         tenantID: 3,
         name: "John",
         age: 20,
@@ -51,7 +51,7 @@ export const tenants = [
         thinking: [],
         lastOwnerIDSeen: 0
     },
-    {   
+    {
         tenantID: 4,
         name: "Lisa",
         age: 50,
@@ -64,7 +64,7 @@ export const tenants = [
         thinking: [],
         lastOwnerIDSeen: 0
     },
-    {   
+    {
         tenantID: 5,
         name: "Roger",
         age: 55,
@@ -77,7 +77,7 @@ export const tenants = [
         thinking: [],
         lastOwnerIDSeen: 0
     },
-    {   
+    {
         tenantID: 6,
         name: "Evelyn",
         age: 25,
@@ -90,7 +90,7 @@ export const tenants = [
         thinking: [],
         lastOwnerIDSeen: 0
     },
-    {   
+    {
         tenantID: 7,
         name: "Lisa",
         age: 29,
@@ -102,31 +102,5 @@ export const tenants = [
         dislike: [],
         thinking: [],
         lastOwnerIDSeen: 0
-    },
-    {   
-        tenantID: 8,
-        name: "George",
-        age: 28,
-        occupation: "Unemployed",
-        company: "Social welfare",
-        incomePerMonth: 1000,
-        url: ["https://images.pexels.com/photos/683241/pexels-photo-683241.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"],
-        like: [],
-        dislike: [],
-        thinking: [],
-        lastOwnerIDSeen: 0
-    },
-    {   
-        tenantID: 9,
-        name: "Clover",
-        age: 35,
-        occupation: "Professor",
-        company: "UVA",
-        incomePerMonth: 3000,
-        url: ["https://images.pexels.com/photos/720598/pexels-photo-720598.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"],
-        like: [],
-        dislike: [],
-        thinking: [],
-        lastOwnerIDSeen: 0
-    }
+    }    
 ]

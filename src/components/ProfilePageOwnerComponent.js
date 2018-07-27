@@ -27,7 +27,7 @@ class ProfilePageOwnerComponent extends React.PureComponent {
                 </div>
                 <div className="ownerCandidates">
                     {this.props.owner[this.props.location.pathname.slice(-1)].likeByTenant.map(url => <div className="candidateContainer">
-                        <img className="imgOwnerCandidate" src={this.props.tenant[url].url} alt = "" />
+                        <img className="imgOwnerCandidate" src={this.props.tenant[url].url} alt="" />
                         <ul>
                             <li><b>Name:</b> {this.props.tenant[url].name}</li>
                             <li><b>Age:</b> {this.props.tenant[url].age}</li>
@@ -35,7 +35,7 @@ class ProfilePageOwnerComponent extends React.PureComponent {
                             <li><b>Company:</b> {this.props.tenant[url].company}</li>
                             <li><b>Income per month:</b> {this.props.tenant[url].incomePerMonth} €</li>
                         </ul>
-                        
+
                     </div>
                     )}
                 </div>
@@ -52,7 +52,7 @@ class ProfilePageOwnerComponent extends React.PureComponent {
                             <li><b>Company:</b> {this.props.tenant[url].company}</li>
                             <li><b>Income per month:</b> {this.props.tenant[url].incomePerMonth} €</li>
                         </ul>
-                        <a href="https://api.whatsapp.com/send?phone=15551234567"><img className="whatsApp" src="https://qph.fs.quoracdn.net/main-qimg-ab05a3e6a691977d72b4e0c6c3c0edb6"/></a>
+                        <a href="https://api.whatsapp.com/send?phone=15551234567"><img className="whatsApp" src="https://qph.fs.quoracdn.net/main-qimg-ab05a3e6a691977d72b4e0c6c3c0edb6" alt="" /></a>
                     </div>
 
                     )}

@@ -45,7 +45,7 @@ class ProfilePageTenantComponent extends React.PureComponent {
                 </div>
                 <div className="ownerCandidates">
                     {this.props.tenant[this.props.location.pathname.slice(-1)].like.map(url => <div className="candidateContainer">
-                        <img className="imgOwnerCandidate" src={this.props.owner[url].url[0]} alt = "" />
+                        <img className="imgOwnerCandidate" src={this.props.owner[url].url[0]} alt="" />
                         <ul>
                             <li><b>Location:</b> {this.props.owner[url].location}</li>
                             <li><b>Price per Month:</b> {this.props.owner[url].pricePerMonth}</li>
