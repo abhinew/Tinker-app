@@ -19,9 +19,9 @@ export default class HouseSelectorPresenter extends React.PureComponent {
         </ul>
       </div>
       <div className="swipeButtons">
-        <button id="like" onClick={this.props.likeThisHouse}>Like</button>
-        <button id="think" onClick={this.props.handleClickThink}>Think</button>
-        <button id="dislike" onClick={this.props.handleClickDislike}>Dislike</button>
+        <button id="like" onClick={this.props.likeThisHouse}><b>Like</b></button>
+        <button id="think" onClick={this.props.handleClickThink}><b>Think</b></button>
+        <button id="dislike" onClick={this.props.handleClickDislike}><b>Dislike</b></button>
       </div>
     </div>
     )

@@ -26,8 +26,8 @@ export default class TenantsSelectorPresenter extends React.PureComponent {
                     <li><b>Income per month:</b> {this.props.tenants[this.props.owner.likeByTenant[0]].incomePerMonth} €</li>
                 </ul>
                 <div className="swipeButtons">
-                    <button id="like" onClick={this.props.handleClickT}>Like</button>
-                    <button id="dislike" onClick={this.props.dislikeThisTenant}>Dislike</button>
+                    <button id="like" onClick={this.props.handleClickT}><b>Like</b></button>
+                    <button id="dislike" onClick={this.props.dislikeThisTenant}><b>Dislike</b></button>
                 </div>
             </div>
         </div>

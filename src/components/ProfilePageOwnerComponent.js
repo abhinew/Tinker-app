@@ -17,15 +17,15 @@ class ProfilePageOwnerComponent extends React.PureComponent {
 
                     <div className="personalInfoOwner">
                         <div className="ownerName">
-                            <h2>{this.props.owner[0].name}</h2>
+                            <h2>{this.props.owner[this.props.location.pathname.slice(-1)].name}</h2>
                             <img src />
                         </div>
                     </div>
                     <div className="potentialCandidatesOwner">
-                        <h2>You've got {this.props.owner[1].likeByTenant.length} Potential Candidates!</h2>
+                        <h2>You've got {this.props.owner[this.props.location.pathname.slice(-1)].likeByTenant.length} Potential Candidates!</h2>
                     </div>
                     <div className="ownerCandidates">
-                         {this.props.owner[1].likeByTenant.map(url => <div className="candidateContainer">
+                         {this.props.owner[this.props.location.pathname.slice(-1)].likeByTenant.map(url => <div className="candidateContainer">
                                                                         <img className="imgOwnerCandidate" src={this.props.tenant[url].url}/>
                                                                              <ul>
                                                                              <li><b>Name:</b> {this.props.tenant[url].name}</li>
@@ -42,7 +42,7 @@ class ProfilePageOwnerComponent extends React.PureComponent {
                          <h2>You've got {this.props.owner[1].like.length} matches!</h2>
                     </div>
                     <div className="ownerCandidates">
-                         {this.props.owner[1].like.map(url => <div className="candidateContainer">
+                         {this.props.owner[this.props.location.pathname.slice(-1)].like.map(url => <div className="candidateContainer">
                                                                         <img className="imgOwnerCandidate" src={this.props.tenant[url].url}/>
                                                                              <ul>
                                                                              <li><b>Name:</b> {this.props.tenant[url].name}</li>
@@ -56,9 +56,9 @@ class ProfilePageOwnerComponent extends React.PureComponent {
                                                                            )}
                     </div>
                     <div className="propertyButtons">
-                        <button className="addPropertyButton">Add Property</button>
-                        <button className="addPropertyButton">Adjust Property</button>
-                        <button className="deletePropertyButton">Delete Property</button>
+                        <button className="addPropertyButton"><b>Add Property</b></button>
+                        <button className="addPropertyButton"><b>Adjust Property</b></button>
+                        <button className="deletePropertyButton"><b>Delete Property</b></button>
                     </div>                    
                 </div>
 
