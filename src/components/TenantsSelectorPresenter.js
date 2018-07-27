@@ -4,11 +4,11 @@ export default class TenantsSelectorPresenter extends React.PureComponent {
 
     render() {
         return (<div>
-            <h1>{this.props.tenant[this.props.owner.likeByTenant[0]].name}</h1>
+            <h1>{this.props.tenants[this.props.owner.likeByTenant[0]].name}</h1>
             
             
             <div className="tenantImage" data-swipable="true" >
-                <img src={this.props.tenant[this.props.owner.likeByTenant[0]].url} alt="Face" draggable></img>
+                <img src={this.props.tenants[this.props.owner.likeByTenant[0]].url} alt="Face" draggable></img>
                 {this.props.owner.like[0] &&
                 <div className="match" style={{ display: this.props.state.display }} onClick={this.props.removeMatch}>
                     <img src={require('../images/its-a-match.png')} alt = "match" />
@@ -20,10 +20,10 @@ export default class TenantsSelectorPresenter extends React.PureComponent {
             </div>
             <div className="tenantInformation" style={{ display: this.props.state.display2 }}>
                 <ul>
-                    <li><b>Age:</b> {this.props.tenant[this.props.owner.likeByTenant[0]].age}</li>
-                    <li><b>Occupation:</b> {this.props.tenant[this.props.owner.likeByTenant[0]].occupation}</li>
-                    <li><b>Company:</b> {this.props.tenant[this.props.owner.likeByTenant[0]].company}</li>
-                    <li><b>Income per month:</b> {this.props.tenant[this.props.owner.likeByTenant[0]].incomePerMonth} €</li>
+                    <li><b>Age:</b> {this.props.tenants[this.props.owner.likeByTenant[0]].age}</li>
+                    <li><b>Occupation:</b> {this.props.tenants[this.props.owner.likeByTenant[0]].occupation}</li>
+                    <li><b>Company:</b> {this.props.tenants[this.props.owner.likeByTenant[0]].company}</li>
+                    <li><b>Income per month:</b> {this.props.tenants[this.props.owner.likeByTenant[0]].incomePerMonth} €</li>
                 </ul>
                 <div className="swipeButtons">
                     <button id="like" onClick={this.props.handleClickT}>Like</button>
