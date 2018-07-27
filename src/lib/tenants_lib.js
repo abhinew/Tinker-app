@@ -19,7 +19,7 @@ export const tenants = [
         occupation: "Webdeveloper",
         company: "Codaisseur",
         incomePerMonth: 5000,
-        url: ["https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"],
+        url: ["https://images.pexels.com/photos/712521/pexels-photo-712521.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"],
         like: [],
         dislike: [],
         thinking: [],
