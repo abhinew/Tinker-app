@@ -1,6 +1,5 @@
 import * as React from 'react'
 import { connect } from 'react-redux'
-// import { owners } from '../lib/owners_lib'
 import { Link } from 'react-router-dom'
 import { likeHOUSE, dislikeHOUSE, thinkHOUSE } from '../actions/tenants_action'
 import HouseSelectorPresenter from './HouseSelectorPresenter'
@@ -11,7 +10,7 @@ class HouseSelector extends React.PureComponent {
   // urlID = this.props.location.pathname.slice(-1)
 
   nextImage = () => {
-    if (i === this.props.owner[this.props.tenants[this.props.location.pathname.slice(-1)].lastOwnerIDSeen].url.length - 1) {
+    if (i === this.props.owners[this.props.tenants[this.props.location.pathname.slice(-1)].lastOwnerIDSeen].url.length - 1) {
       i = 0;
     } else {
       i++
@@ -21,7 +20,7 @@ class HouseSelector extends React.PureComponent {
 
   previousImage = () => {
     if (i === 0) {
-      i = this.props.owner[this.props.tenants[this.props.location.pathname.slice(-1)].lastOwnerIDSeen].url.length - 1
+      i = this.props.owners[this.props.tenants[this.props.location.pathname.slice(-1)].lastOwnerIDSeen].url.length - 1
     } else {
       i--
     }
@@ -44,7 +43,7 @@ class HouseSelector extends React.PureComponent {
   }
 
   nextHouse = () => {
-    if (i === this.props.owner.length - 1) {
+    if (i === this.props.owners.length - 1) {
       i = 0;
     } else {
       i++
@@ -73,12 +72,12 @@ class HouseSelector extends React.PureComponent {
           <Link to='/chat'>Chat</Link>
         </div>
       </div>
-      {this.props.tenants[this.props.location.pathname.slice(-1)].lastOwnerIDSeen === (this.props.owner.length) && <div>
+      {this.props.tenants[this.props.location.pathname.slice(-1)].lastOwnerIDSeen === (this.props.owners.length) && <div>
         <h1>No more houses is available</h1>
       </div>}
 
-      {this.props.tenants[this.props.location.pathname.slice(-1)].lastOwnerIDSeen !== (this.props.owner.length) && <div>
-        <HouseSelectorPresenter owner={this.props.owner} tenant={this.props.tenants[this.props.location.pathname.slice(-1)]}
+      {this.props.tenants[this.props.location.pathname.slice(-1)].lastOwnerIDSeen !== (this.props.owners.length) && <div>
+        <HouseSelectorPresenter owners={this.props.owners} tenant={this.props.tenants[this.props.location.pathname.slice(-1)]}
           nextImage={this.nextImage} previousImage={this.previousImage}
           state={this.state} likeThisHouse={this.likeThisHouse}
           handleClickThink={this.handleClickThink} handleClickDislike={this.handleClickDislike} />
@@ -93,7 +92,7 @@ class HouseSelector extends React.PureComponent {
 const mapStateToProps = (state) => {
   return {
     tenants: { ...state.tenant }, // for the first time this is equal to the initial state defined in ./reducers/newWord
-    owner: state.owner
+    owners: state.owner
   }
 }
 

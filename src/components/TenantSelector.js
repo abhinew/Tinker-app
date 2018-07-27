@@ -14,13 +14,13 @@ class TenantSelector extends React.Component {
 
   likeThisTenant = () => {
     console.log("like this tenant")
-    this.setState({imageAddress: this.props.tenant[this.props.owner.likeByTenant[0]].url})
-    this.props.likeTENANT(this.props.owner.likeByTenant[0], this.props.owner.ownerID)
+    this.setState({imageAddress: this.props.tenants[this.props.owners[this.props.location.pathname.slice(-1)].likeByTenant[0]].url})
+    this.props.likeTENANT(this.props.owners[this.props.location.pathname.slice(-1)].likeByTenant[0], this.props.owners[this.props.location.pathname.slice(-1)].ownerID)
   }
 
   dislikeThisTenant = () => {
     console.log("dislike this tenant")
-    this.props.dislikeTENANT(this.props.owner.likeByTenant[0], this.props.owner.ownerID)
+    this.props.dislikeTENANT(this.props.owners[this.props.location.pathname.slice(-1)].likeByTenant[0], this.props.owners[this.props.location.pathname.slice(-1)].ownerID)
   }
 
   handleClickT = () => {
@@ -52,12 +52,12 @@ class TenantSelector extends React.Component {
         </div>
       </div>
 
-      {!this.props.owner.likeByTenant[0] && <div>
+      {!this.props.owners[this.props.location.pathname.slice(-1)].likeByTenant[0] && <div>
         <h1>No Tenant is found so far</h1>
       </div>}
 
-      {this.props.owner.likeByTenant[0] && <div>
-        <TenantsSelectorPresenter owner={this.props.owner} tenant={this.props.tenant}
+      {this.props.owners[this.props.location.pathname.slice(-1)].likeByTenant[0] && <div>
+        <TenantsSelectorPresenter owner={this.props.owners[this.props.location.pathname.slice(-1)]} tenants={this.props.tenants}
           handleClickT={this.handleClickT} dislikeThisTenant={this.dislikeThisTenant}
           removeMatch={this.removeMatch} state={this.state} imageAddress = {this.img} />
       </div>}
@@ -68,8 +68,8 @@ class TenantSelector extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    tenant: state.tenant, // for the first time this is equal to the initial state defined in ./reducers/newWord
-    owner: { ...state.owner[1] }
+    tenants: { ...state.tenant }, // for the first time this is equal to the initial state defined in ./reducers/newWord
+    owners: { ...state.owner }
   }
 }
 
