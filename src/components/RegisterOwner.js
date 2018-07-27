@@ -6,9 +6,11 @@ import TextField from 'material-ui/TextField';
 import PropTypes from "prop-types";
 
 class RegisterOwner extends Component {
-  constructor(props){
+  defaultValue = ''
+
+  constructor(props) {
     super(props);
-    this.state={
+    this.state = {
       name: '',
       location: '',
       pricePerMonth: '',
@@ -23,7 +25,7 @@ class RegisterOwner extends Component {
     }
   }
 
-  handleClick = (event) => {
+  handleClick = () => {
     this.props.onAddUser({
       name: this.state.name,
       location: this.state.location,
@@ -37,6 +39,7 @@ class RegisterOwner extends Component {
       dislike: this.state.dislike,
       lastTenantIDSeen: this.state.lastTenantIDSeen
     });
+    this.defaultValue = ''
     this.setState({
       name: '',
       location: '',
@@ -58,50 +61,52 @@ class RegisterOwner extends Component {
       <div>
         <MuiThemeProvider>
           <div>
-          <AppBar
-             title="Register"
-           />
-           <TextField
-             hintText="Enter the Name"
-             floatingLabelText="First Name"
-             onChange = {(event,newValue) => {this.setState({name:newValue})}}
-             />
-           <br/>
-           <TextField
-             hintText="Enter the location"
-             floatingLabelText="location"
-             onChange = {(event,newValue) => this.setState({location:newValue})}
-             />
-            <br/> 
+            <AppBar
+              title="Register"
+            />
             <TextField
-             hintText="Enter the pricePerMonth"
-             floatingLabelText="pricePerMonth"
-             onChange = {(event,newValue) => this.setState({pricePerMonth:newValue})}
-             />
-             <br/>
+              hintText="Enter the Name"
+              floatingLabelText="First Name"
+              onChange={(event) => {this.setState({ name: event.target.value })
+              }}
+
+            />
+            <br />
             <TextField
-             hintText="Enter the size of property"
-             floatingLabelText="size"
-             onChange = {(event,newValue) => this.setState({size:newValue})}
-             />
-             <br/>
-             <TextField
-             hintText="Enter the number of bathrooms"
-             floatingLabelText="bathrooms"
-             onChange = {(event,newValue) => this.setState({bathrooms:newValue})}
-             /> 
-             <br/> 
-             <TextField
-             hintText="Enter the number of bedrooms"
-             floatingLabelText="bedrooms"
-             onChange = {(event,newValue) => this.setState({bedrooms:newValue})}
-             /> 
-             <br/> 
-           <br/>
-           <br/>
-           <RaisedButton label="Submit" primary={true} style={style} onClick={(event) => this.handleClick(event)}/>
+              hintText="Enter the location"
+              floatingLabelText="location"
+              onChange={(event, newValue) => this.setState({ location: newValue })}
+            />
+            <br />
+            <TextField
+              hintText="Enter the pricePerMonth"
+              floatingLabelText="pricePerMonth"
+              onChange={(event, newValue) => this.setState({ pricePerMonth: newValue })}
+            />
+            <br />
+            <TextField
+              hintText="Enter the size of property"
+              floatingLabelText="size"
+              onChange={(event, newValue) => this.setState({ size: newValue })}
+            />
+            <br />
+            <TextField
+              hintText="Enter the number of bathrooms"
+              floatingLabelText="bathrooms"
+              onChange={(event, newValue) => this.setState({ bathrooms: newValue })}
+            />
+            <br />
+            <TextField
+              hintText="Enter the number of bedrooms"
+              floatingLabelText="bedrooms"
+              onChange={(event, newValue) => this.setState({ bedrooms: newValue })}
+            />
+            <br />
+            <br />
+            <br />
+            <RaisedButton label="Submit" primary={true} style={style} onClick={this.handleClick} />
           </div>
-         </MuiThemeProvider>
+        </MuiThemeProvider>
       </div>
     );
   }
