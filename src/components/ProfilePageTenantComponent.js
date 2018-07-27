@@ -11,7 +11,7 @@ class ProfilePageTenantComponent extends React.PureComponent {
                 <div className="menu">
                     <div className="topButtons">
                         <Link to={`/tenants/${this.props.location.pathname.slice(-1)}`}>Back</Link>
-                        <Link to='/chat'>Logout</Link>
+                        <Link to='/'>Logout</Link>
 
                     </div>
                 </div>
