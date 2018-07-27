@@ -3,7 +3,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBar from 'material-ui/AppBar';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
-
+import PropTypes from "prop-types";
 
 class Register extends Component {
   constructor(props){
@@ -11,9 +11,21 @@ class Register extends Component {
     this.state={
       first_name:'',
       age:'',
-      email:'',
-      password:''
+      occupation: '',
+      company: '',
+      incomePerMonth: ''
     }
+  }
+
+  handleClick = (event) => {
+
+    this.props.onAddUser({
+      name: this.state.first_name,
+      age: this.state.age,
+      occupation: this.state.occupation,
+      company: this.state.company,
+      incomePerMonth: this.state.incomePerMonth
+    });
   }
   render() {
     return (
@@ -26,7 +38,7 @@ class Register extends Component {
            <TextField
              hintText="Enter your Name"
              floatingLabelText="First Name"
-             onChange = {(event,newValue) => this.setState({first_name:newValue})}
+             onChange = {(event,newValue) => {this.setState({first_name:newValue})}}
              />
            <br/>
            <TextField
@@ -34,20 +46,26 @@ class Register extends Component {
              floatingLabelText="Age"
              onChange = {(event,newValue) => this.setState({age:newValue})}
              />
-           <br/>
-           {/* <TextField
-             hintText="Enter your Email"
-             type="email"
-             floatingLabelText="Email"
-             onChange = {(event,newValue) => this.setState({email:newValue})}
+            <br/> 
+            <TextField
+             hintText="Enter your Occupation"
+             floatingLabelText="Occupation"
+             onChange = {(event,newValue) => this.setState({occupation:newValue})}
              />
+             <br/>
+            <TextField
+             hintText="Enter your company"
+             floatingLabelText="company"
+             onChange = {(event,newValue) => this.setState({company:newValue})}
+             />
+             <br/>
+             <TextField
+             hintText="Enter your incomePerMonth"
+             floatingLabelText="incomePerMonth"
+             onChange = {(event,newValue) => this.setState({incomePerMonth:newValue})}
+             /> 
+             <br/> 
            <br/>
-           <TextField
-             type = "password"
-             hintText="Enter your Password"
-             floatingLabelText="Password"
-             onChange = {(event,newValue) => this.setState({password:newValue})}
-             /> */}
            <br/>
            <RaisedButton label="Submit" primary={true} style={style} onClick={(event) => this.handleClick(event)}/>
           </div>
@@ -55,6 +73,11 @@ class Register extends Component {
       </div>
     );
   }
+}
+
+
+Register.propTypes = {
+  onAddUser: PropTypes.func.isRequired
 }
 
 const style = {
