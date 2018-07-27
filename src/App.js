@@ -14,9 +14,6 @@ import ProfilePageTenantComponent from './components/ProfilePageTenantComponent'
 import LoginTenant from './components/LoginTenant';
 import LoginOwner from './components/LoginOwner';
 
-
-
-
 class App extends Component {
   render() {
     return (
@@ -24,12 +21,12 @@ class App extends Component {
       <BrowserRouter>
         <div className="App">
           <Route exact path ='/' component = {FirstPageComponent} />
-          <Route exact path ='/tenants/:tenant' component = {HouseSelector} />
-          <Route exact path ='/owners/:owner' component = {TenantSelector} />
+          <Route path ="/tenants/:tenantID" component = {HouseSelector} />
+          <Route path ='/owners/:ownerID' component = {TenantSelector} />
           <Route exact path ='/profile/owner' component = {ProfilePageOwnerComponent} />
           <Route exact path ='/profile/tenant' component = {ProfilePageTenantComponent} />
-          <Route exact path="/tenants" component={LoginTenant} />
-          <Route exact path="/owners" component={LoginOwner} />
+          <Route exact path="/tenantsLogin" component={LoginTenant} />
+          <Route exact path="/ownersLogin" component={LoginOwner} />
         </div>
          </BrowserRouter>
       </Provider>

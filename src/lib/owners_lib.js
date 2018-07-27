@@ -11,7 +11,8 @@ export const owners = [
         url: ["https://cloud.funda.nl/valentina_media/097/400/696_720x480.jpg", "https://cloud.funda.nl/valentina_media/097/400/698_1080.jpg", "https://cloud.funda.nl/valentina_media/097/400/699_1080.jpg"],
         likeByTenant: [],
         like: [],
-        dislike: []
+        dislike: [],
+        lastTenantIDSeen: 0
     },
     {
         ownerID: 1,
@@ -22,9 +23,10 @@ export const owners = [
         bathrooms: 1,
         bedrooms: 2,
         url: ["https://cloud.funda.nl/valentina_media/097/135/058_2160.jpg", "https://cloud.funda.nl/valentina_media/097/135/074_2160.jpg", "https://cloud.funda.nl/valentina_media/097/135/075_1080.jpg"],
-        likeByTenant: [],
+        likeByTenant: [2, 3, 1],
         like: [],
-        dislike: []
+        dislike: [],
+        lastTenantIDSeen: 2
     },
     {
         ownerID: 2,
@@ -37,7 +39,8 @@ export const owners = [
         url: ["https://cloud.funda.nl/valentina_media/096/940/450_2160.jpg", "https://cloud.funda.nl/valentina_media/096/940/455_2160.jpg", "https://cloud.funda.nl/valentina_media/096/940/465_2160.jpg"],
         likeByTenant: [],
         like: [],
-        dislike: []
+        dislike: [],
+        lastTenantIDSeen: 0
     },
     {
         ownerID: 3,
@@ -50,7 +53,8 @@ export const owners = [
         url: ["https://cloud.funda.nl/valentina_media/097/285/435_720x480.jpg", "https://cloud.funda.nl/valentina_media/096/711/797_2160.jpg", "https://cloud.funda.nl/valentina_media/096/711/788_2160.jpg"],
         likeByTenant: [],
         like: [],
-        dislike: []
+        dislike: [],
+        lastTenantIDSeen: 0
     },
     {
         ownerID: 4,
@@ -61,8 +65,9 @@ export const owners = [
         bathrooms: 1,
         bedrooms: 2,
         url: ["https://cloud.funda.nl/valentina_media/095/533/790_720x480.jpg", "https://cloud.funda.nl/valentina_media/095/533/820_2160.jpg", "https://cloud.funda.nl/valentina_media/095/533/775_2160.jpg"],
-        likeByTenant: [],
+        likeByTenant: [3, 4, 1],
         like: [],
-        dislike: []
+        dislike: [],
+        lastTenantIDSeen: 0
     },
 ]
