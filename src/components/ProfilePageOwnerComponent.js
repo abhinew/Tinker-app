@@ -5,13 +5,12 @@ import { connect } from 'react-redux'
 class ProfilePageOwnerComponent extends React.PureComponent {
 
     render() {
-        console.log(this.props.tenant)
         return (
                 <div>
                       <div className="menu">
                         <div className="topButtons">
                             <Link to={"/owners/"}>Back</Link>
-                            <Link to='/chat'>Logout</Link>
+                            <Link to='/'>Logout</Link>
                         </div>
                     </div>
 
@@ -25,49 +24,35 @@ class ProfilePageOwnerComponent extends React.PureComponent {
                         <h2>You've got {this.props.owner[1].likeByTenant.length} Potential Candidates!</h2>
                     </div>
                     <div className="ownerCandidates">
-                        <div className="candidateContainer">
-                            <img className="imgOwnerCandidate" src={this.props.tenant[this.props.owner[1].likeByTenant[1]].url}/>
-                            <ul>
-                                <li><b>Name:</b> {this.props.tenant[this.props.owner[1].likeByTenant[1]].name}</li>
-                                <li><b>Age:</b> {this.props.tenant[this.props.owner[1].likeByTenant[1]].age}</li>
-                                <li><b>Occupation:</b> {this.props.tenant[this.props.owner[1].likeByTenant[1]].occupation}</li>
-                                <li><b>Company:</b> {this.props.tenant[this.props.owner[1].likeByTenant[1]].company}</li>
-                                <li><b>Income per month:</b> {this.props.tenant[this.props.owner[1].likeByTenant[1]].incomePerMonth} €</li>
-                            </ul>
-                         </div>
-                         <div className="candidateContainer">
-                            <img className="imgOwnerCandidate" src={this.props.tenant[this.props.owner[1].likeByTenant[1]].url}/>
-                            <ul>
-                                <li><b>Name:</b> {this.props.tenant[this.props.owner[1].likeByTenant[1]].name}</li>
-                                <li><b>Age:</b> {this.props.tenant[this.props.owner[1].likeByTenant[1]].age}</li>
-                                <li><b>Occupation:</b> {this.props.tenant[this.props.owner[1].likeByTenant[1]].occupation}</li>
-                                <li><b>Company:</b> {this.props.tenant[this.props.owner[1].likeByTenant[1]].company}</li>
-                                <li><b>Income per month:</b> {this.props.tenant[this.props.owner[1].likeByTenant[1]].incomePerMonth} €</li>
-                            </ul>
-                         </div>
-                         <div className="candidateContainer">
-                            <img className="imgOwnerCandidate" src={this.props.tenant[this.props.owner[1].likeByTenant[1]].url}/>
-                            <ul>
-                                <li><b>Name:</b> {this.props.tenant[this.props.owner[1].likeByTenant[1]].name}</li>
-                                <li><b>Age:</b> {this.props.tenant[this.props.owner[1].likeByTenant[1]].age}</li>
-                                <li><b>Occupation:</b> {this.props.tenant[this.props.owner[1].likeByTenant[1]].occupation}</li>
-                                <li><b>Company:</b> {this.props.tenant[this.props.owner[1].likeByTenant[1]].company}</li>
-                                <li><b>Income per month:</b> {this.props.tenant[this.props.owner[1].likeByTenant[1]].incomePerMonth} €</li>
-                            </ul>
-                         </div>
-                         <div className="candidateContainer">
-                            <img className="imgOwnerCandidate" src={this.props.tenant[this.props.owner[1].likeByTenant[1]].url}/>
-                            <ul>
-                                <li><b>Name:</b> {this.props.tenant[this.props.owner[1].likeByTenant[1]].name}</li>
-                                <li><b>Age:</b> {this.props.tenant[this.props.owner[1].likeByTenant[1]].age}</li>
-                                <li><b>Occupation:</b> {this.props.tenant[this.props.owner[1].likeByTenant[1]].occupation}</li>
-                                <li><b>Company:</b> {this.props.tenant[this.props.owner[1].likeByTenant[1]].company}</li>
-                                <li><b>Income per month:</b> {this.props.tenant[this.props.owner[1].likeByTenant[1]].incomePerMonth} €</li>
-                            </ul>
-                         </div>
+                         {this.props.owner[1].likeByTenant.map(url => <div className="candidateContainer">
+                                                                        <img className="imgOwnerCandidate" src={this.props.tenant[url].url}/>
+                                                                             <ul>
+                                                                             <li><b>Name:</b> {this.props.tenant[url].name}</li>
+                                                                             <li><b>Age:</b> {this.props.tenant[url].age}</li>
+                                                                             <li><b>Occupation:</b> {this.props.tenant[url].occupation}</li>
+                                                                             <li><b>Company:</b> {this.props.tenant[url].company}</li>
+                                                                             <li><b>Income per month:</b> {this.props.tenant[url].incomePerMonth} €</li>
+                                                                         </ul>
+                                                                         </div>
+                          
+                                                                           )}
                     </div>
                     <div className="ownerMatches">
                          <h2>You've got {this.props.owner[1].like.length} matches!</h2>
+                    </div>
+                    <div className="ownerCandidates">
+                         {this.props.owner[1].like.map(url => <div className="candidateContainer">
+                                                                        <img className="imgOwnerCandidate" src={this.props.tenant[url].url}/>
+                                                                             <ul>
+                                                                             <li><b>Name:</b> {this.props.tenant[url].name}</li>
+                                                                             <li><b>Age:</b> {this.props.tenant[url].age}</li>
+                                                                             <li><b>Occupation:</b> {this.props.tenant[url].occupation}</li>
+                                                                             <li><b>Company:</b> {this.props.tenant[url].company}</li>
+                                                                             <li><b>Income per month:</b> {this.props.tenant[url].incomePerMonth} €</li>
+                                                                         </ul>
+                                                                         </div>
+                          
+                                                                           )}
                     </div>
                     <div className="propertyButtons">
                         <button className="addPropertyButton">Add Property</button>
