@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-
 import Register from './Register';
 
 
@@ -9,7 +8,7 @@ class LoginOwner extends React.PureComponent {
 
     displayRegisteredOwners(owner) {
         
-        return (<li>
+        return (<li key={owner.ownerID}>
             <Link to={ `/owners/${owner.name}` }>{owner.name}</Link> 
             </li>); 
     }
@@ -20,11 +19,8 @@ class LoginOwner extends React.PureComponent {
             <div>
                 <h1>Registered owners</h1>
                 { !this.props.owner && 'Loading...' }
-                {
-                this.props.owner &&
-                <ul>{ this.props.owner.map(this.displayRegisteredOwners) }</ul>
-                }
-                 <Register />   
+                {(this.props.owner)?<ul>{ this.props.owner.map(this.displayRegisteredOwners) }</ul>:null}
+                <Register />
             </div> 
         )
     }

@@ -1,30 +1,29 @@
 import * as React from 'react';
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-
 import Register from './Register';
-
+import { addTenant } from '../actions/tenants_action'
 
 class LoginTenant extends React.PureComponent {
 
     displayRegisteredTenants(tenant) {
         
-        return (<li>
+        return (<li key={tenant.tenantID}>
             <Link to={ `/tenants/${tenant.name}` }>{tenant.name}</Link> 
             </li>); 
     }
-
+    
     render() {
         console.log(this.props.tenant)
         return (
             <div>
                 <h1>Registered tenants</h1>
-                { !this.props.tenant && 'Loading...' }
+                { !this.props.tenants && 'Loading...' }
                 {
-                this.props.tenant &&
-                <ul>{ this.props.tenant.map(this.displayRegisteredTenants) }</ul>
+                this.props.tenants &&
+                <ul>{ this.props.tenants.map(this.displayRegisteredTenants) }</ul>
                 }
-                 <Register />   
+                <Register onAddUser ={this.props.addTenant}/>   
             </div> 
         )
     }
@@ -32,9 +31,14 @@ class LoginTenant extends React.PureComponent {
 }
 const mapStateToProps = (state) => {
     return {
-      tenant: state.tenant, // for the first time this is equal to the initial state defined in ./reducers/newWord
+      tenants: state.tenant, // for the first time this is equal to the initial state defined in ./reducers/newWord
       owner: state.owner
     }
 }
 
-export default connect(mapStateToProps, null) (LoginTenant) 
+const mapDispatchToProps = {
+    addTenant
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps) (LoginTenant) 
