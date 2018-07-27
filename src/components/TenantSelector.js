@@ -5,7 +5,7 @@ import { likeTENANT, dislikeTENANT } from '../actions/owners_action'
 import TenantsSelectorPresenter from './TenantsSelectorPresenter';
 
 class TenantSelector extends React.Component {
-  
+
   state = {
     display: "none",
     display2: "",
@@ -13,13 +13,13 @@ class TenantSelector extends React.Component {
   }
 
   likeThisTenant = () => {
-    console.log("like this tenant")
-    this.setState({imageAddress: this.props.tenants[this.props.owners[this.props.location.pathname.slice(-1)].likeByTenant[0]].url})
+    // console.log("like this tenant")
+    this.setState({ imageAddress: this.props.tenants[this.props.owners[this.props.location.pathname.slice(-1)].likeByTenant[0]].url })
     this.props.likeTENANT(this.props.owners[this.props.location.pathname.slice(-1)].likeByTenant[0], this.props.owners[this.props.location.pathname.slice(-1)].ownerID)
   }
 
   dislikeThisTenant = () => {
-    console.log("dislike this tenant")
+    // console.log("dislike this tenant")
     this.props.dislikeTENANT(this.props.owners[this.props.location.pathname.slice(-1)].likeByTenant[0], this.props.owners[this.props.location.pathname.slice(-1)].ownerID)
   }
 
@@ -46,7 +46,7 @@ class TenantSelector extends React.Component {
     return (<div>
       <div className="menu">
         <div className="topButtons">
-          <Link to={ `/profile/owners/${this.props.location.pathname.slice(-1)}` }>Owner Profile</Link>
+          <Link to={`/profile/owners/${this.props.location.pathname.slice(-1)}`}>Owner Profile</Link>
           <Link to='/'>Home</Link>
           <Link to={`/owners/${this.props.location.pathname.slice(-1)}`}>Chat</Link>
         </div>
@@ -59,7 +59,7 @@ class TenantSelector extends React.Component {
       {this.props.owners[this.props.location.pathname.slice(-1)].likeByTenant[0] && <div>
         <TenantsSelectorPresenter owner={this.props.owners[this.props.location.pathname.slice(-1)]} tenants={this.props.tenants}
           handleClickT={this.handleClickT} dislikeThisTenant={this.dislikeThisTenant}
-          removeMatch={this.removeMatch} state={this.state} imageAddress = {this.img} />
+          removeMatch={this.removeMatch} state={this.state} imageAddress={this.img} />
       </div>}
     </div>
     )

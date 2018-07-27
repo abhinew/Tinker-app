@@ -22,17 +22,17 @@ class HouseSelector extends React.PureComponent {
   }
 
   likeThisHouse = () => {
-    console.log("like this house")
+    // console.log("like this house")
     this.props.likeHOUSE(this.props.tenants[this.props.location.pathname.slice(-1)].tenantID, this.props.owners[this.props.tenants[this.props.location.pathname.slice(-1)].lastOwnerIDSeen].ownerID)
   }
 
   dislikeThisHouse = () => {
-    console.log("dislike this house")
+    // console.log("dislike this house")
     this.props.dislikeHOUSE(this.props.tenants[this.props.location.pathname.slice(-1)].tenantID, this.props.owners[this.props.tenants[this.props.location.pathname.slice(-1)].lastOwnerIDSeen].ownerID)
   }
 
   thinkThisHouse = () => {
-    console.log("think about this house")
+    // console.log("think about this house")
     this.props.thinkHOUSE(this.props.tenants[this.props.location.pathname.slice(-1)].tenantID, this.props.owners[this.props.tenants[this.props.location.pathname.slice(-1)].lastOwnerIDSeen].ownerID)
   }
 
@@ -57,11 +57,9 @@ class HouseSelector extends React.PureComponent {
 
   render() {
     return (<div>
-      {console.log("lastOwnerID", this.props.tenants[this.props.location.pathname.slice(-1)].lastOwnerIDSeen)}
-      {console.log("owners.length", this.props.owners.length)}
       <div className="menu">
         <div className="topButtons">
-          <Link to={ `/profile/tenants/${this.props.location.pathname.slice(-1)}` }>Profile</Link>
+          <Link to={`/profile/tenants/${this.props.location.pathname.slice(-1)}`}>Profile</Link>
           <Link to='/'>Home</Link>
           <Link to={`/tenants/${this.props.location.pathname.slice(-1)}`}>Chat</Link>
         </div>
@@ -86,7 +84,7 @@ class HouseSelector extends React.PureComponent {
 const mapStateToProps = (state) => {
   return {
     tenants: { ...state.tenant }, // for the first time this is equal to the initial state defined in ./reducers/newWord
-    owners: [ ...state.owner ]
+    owners: [...state.owner]
   }
 }
 
