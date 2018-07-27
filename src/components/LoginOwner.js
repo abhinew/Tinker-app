@@ -13,7 +13,6 @@ class LoginOwner extends React.PureComponent {
     }
 
     render() {
-        console.log(this.props.owner)
         return (
             <div>
                 <h1>Registered owners</h1>
