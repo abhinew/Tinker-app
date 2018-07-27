@@ -63,7 +63,7 @@ class HouseSelector extends React.PureComponent {
         <div className="topButtons">
           <Link to={ `/profile/tenants/${this.props.location.pathname.slice(-1)}` }>Profile</Link>
           <Link to='/'>Home</Link>
-          <Link to='/chat'>Chat</Link>
+          <Link to={`/tenants/${this.props.location.pathname.slice(-1)}`}>Chat</Link>
         </div>
       </div>
       {this.props.tenants[this.props.location.pathname.slice(-1)].lastOwnerIDSeen === (this.props.owners.length) && <div className="noMoreHouses">
