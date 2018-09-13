@@ -15,4 +15,4 @@ The householder can look at the profile of people who are interested in his hous
 - If he/she dislikes, the renter will be removed from his/her profile
 - If he/she likes, then that is a match. He/She will receive the renter's phone/email to communicate.
 
-:exclamation: This app was a practice for making a simple React-Redux website. There is no database or back-end connected to it. Not all of the initial user stories were implemented.
+:exclamation: :point_right: This app was a practice for making a simple React-Redux website. There is no database or back-end connected to it. Not all of the initial user stories were implemented.
